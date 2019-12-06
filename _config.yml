@@ -9,6 +9,8 @@ social-network-links:
   email: "dlncg4602@gmail.com"
   github: yon-ln
   
+url-pretty: "doanhluunguyen.com"
+  
 
 plugins:
   - jekyll-paginate
