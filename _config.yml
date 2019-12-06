@@ -10,7 +10,8 @@ social-network-links:
   github: yon-ln
   
 url-pretty: "doanhluunguyen.com"
-  
+ 
+link-tags: true
 
 plugins:
   - jekyll-paginate
