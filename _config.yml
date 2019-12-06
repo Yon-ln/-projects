@@ -10,5 +10,6 @@ social-network-links:
   github: yon-ln
   
 
-
-theme: null
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
