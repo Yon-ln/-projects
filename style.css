@@ -89,6 +89,24 @@ header a:hover{
 
 /* ratio */
 
+.iframe-container {
+  overflow: hidden;
+	background:#41B3A3;
+	width:30%;
+
+  padding-top: 30%;
+  position: relative;
+}
+ 
+iframe {
+   border: 0;
+   height: 100%;
+   left: 0;
+   position: absolute;
+   top: 0;
+   width: 100%;
+}
+
 #games .box1 {
 	background:#41B3A3;
 	width: 30%;
@@ -96,13 +114,7 @@ header a:hover{
     	padding-top: 30%;
 }
 
-#games .contained{
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;	
-}
+
 
 #games .game{
 	float:center;
@@ -111,7 +123,11 @@ header a:hover{
 	padding:10px 10px 10px 10px;
 	overflow:hidden;	
 	border:none;
+}
 
+#games .content{
+	position:absolute;
+}
 
 
 /* ratio */
