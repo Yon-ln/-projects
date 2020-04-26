@@ -76,6 +76,7 @@ header a:hover{
 	min-height:400px;
 	background-color:#85DCBA;
 	text-align:center;
+	padding: 10px;
 	color:white;
 }
 
@@ -86,12 +87,23 @@ header a:hover{
 }
 
 #games .box{
+	background:#41B3A3;
 	float:center;
 	text-align:center;
 	width:700px;
 	height:700px;
-	padding:10px;
+
 	overflow:hidden;
+}
+
+#games .game{
+	float:center;
+	text-align:center;
+	width:650px;
+	height:650px;
+	padding:10px 10px 10px 10px;
+	overflow:hidden;	
+	border:none;
 }
 
 
