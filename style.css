@@ -95,19 +95,18 @@ header a:hover{
 	width:30%;
 	padding-top:30%;	
 
-
   position: relative;
 }
  
 iframe {
     position: absolute;
-	left:1px;
-	top:0;
+background:white;
+	left:8px;
+	top:8px;
 	bottom:0;
-	padding-top:100%;
-	padding-right:33%;
 
-    height: 0;
+	width:95%;
+    height: 85%;
 
     overflow: hidden;
 }
