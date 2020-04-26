@@ -93,34 +93,47 @@ header a:hover{
   overflow: hidden;
 margin:auto;
 	background:#41B3A3;
-	width:75%;
+	width:50%;
 
-	padding-top:30%;	
+	padding-top:30%;
   	position: relative;
 }
  
-iframe {
+.ratio1{
     position: absolute;
 
 	left:0;
 	top:0;
 	bottom:0;
+	padding-left:100px;
+	width:50%;
+    	height: 50%;
+
+    overflow: hidden;
+}
+
+.ratio2{
+    position: absolute;
+
+	left:0;
 	top:0;
-	width:99%;
-    	height: 85%;
+	bottom:0;
+
+	width:100%;
+    	height: 90%;
 
     overflow: hidden;
 }
 
 #unityContainer {
 
-background:black;
+	background:black;
 	position: absolute;
 	left:0;
 	top:0;
 	bottom:0;
-	top:0;
-	width:100%;
+	
+	width: 100%;
     	height: 100%;
 	overflow: hidden;
 	
