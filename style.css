@@ -100,7 +100,7 @@ header a:hover{
  
 iframe {
     position: absolute;
-background:white;
+
 	left:8px;
 	top:8px;
 	bottom:0;
@@ -113,7 +113,7 @@ background:white;
 
 #unityContainer {
     position: absolute;
-background:black;
+
 frameborder:none;
 margin:none;
 	width:150%;
