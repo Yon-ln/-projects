@@ -86,10 +86,16 @@ header a:hover{
 }
 
 #games .box{
-	float:left;
+	float:center;
+	display:block;width:100%;height:auto;
 	text-align:center;
 	width:30%;
 	padding:10px;
+}
+
+#games .iframe{
+	float:center;
+	display:block;width:100%;height:auto;	
 }
 
 /* artwork */
