@@ -93,25 +93,25 @@ header a:hover{
   overflow: hidden;
 	background:#41B3A3;
 	width:30%;
+	padding-top:30%;	
 
 
   position: relative;
 }
  
 iframe {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 35px;
+    position: absolute;
+	left:1px;
+	top:0;
+	bottom:0;
+	padding-top:100%;
+	padding-right:33%;
+
     height: 0;
+
     overflow: hidden;
 }
 
-#games .box1 {
-	background:#41B3A3;
-	width: 30%;
-	overflow:hidden;
-    	
-}
 
 
 
