@@ -31,17 +31,39 @@
 	<section id="games">
 		<div class="container">
 			<h1>Games</h1>
-			
-			<a href="#" id="button" class="button">Dungeon Crawler</a>
+			<a href="#" id="Doctor Gear" class="button">Doctor Gear</a>
+			<a href="#" id="Dungeon Crawler" class="button">Dungeon Crawler</a>
+			<a href="#" id="The Last Hope" class="button">The Last Hope</a>
+			<a href="#" id="Romance Story" class="button">Romance Story</a>
 
 		</div>
+
+
 	</section>
-	<div class="bg-modal">
-		<div class="iframe-container">
-			<iframe class="ratio1" src="./d/index.html"></iframe>
+
+		<div class="bg-modal1">
+			<div class="iframe-container2">
+				<iframe class="ratio2" src="./a/index.html"></iframe>
+			</div>
 		</div>
-				
-	</div>
+
+		<div class="bg-modal2">
+			<div class="iframe-container1">
+				<iframe class="ratio1" src="./d/index.html"></iframe>
+			</div>
+		</div>
+
+		<div class="bg-modal3">
+			<div class="iframe-container2">
+				<iframe class="ratio2" src="./c/index.html"></iframe>
+			</div>
+		</div>
+
+		<div class="bg-modal4">
+			<div class="iframe-container2">
+				<iframe class="ratio1" src="./a/index.html"></iframe>
+			</div>
+		</div>
 
 	</body>
 
@@ -51,16 +73,37 @@
 		
 		$(document).ready(function () {
 		var container = null;
-		document.getElementById('button').onclick = function(){
-			document.querySelector('.bg-modal').style.display = "flex";
-			container = $(".iframe-container");
-
+		var bg = null;
+		document.getElementById('Doctor Gear').onclick = function(){
+			document.querySelector('.bg-modal1').style.display = "flex";
+			bg = document.querySelector('.bg-modal1');
+			container = $(".iframe-container2");
 		}
+
+		document.getElementById('Dungeon Crawler').onclick = function(){
+			document.querySelector('.bg-modal2').style.display = "flex";
+			bg = document.querySelector('.bg-modal2');
+			container = $(".iframe-container1");
+		}
+
+		document.getElementById('The Last Hope').onclick = function(){
+			document.querySelector('.bg-modal3').style.display = "flex";
+			bg = document.querySelector('.bg-modal3');
+			container = $(".iframe-container2");
+		}
+
+		document.getElementById('Romance Story').onclick = function(){
+			document.querySelector('.bg-modal4').style.display = "flex";
+			bg = document.querySelector('.bg-modal4');
+			container = $(".iframe-container2");
+		}
+
+
 		
 		$(document).mouseup(function(e){
 
 			if(container != null && !container.is(e.target) && container.has(e.target).length === 0){
-				document.querySelector('.bg-modal').style.display = "none";				
+				bg.style.display = "none";			
 			}
 
 
