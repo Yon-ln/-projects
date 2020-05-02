@@ -70,14 +70,12 @@ body{
 	opacity:0.9;
 	width:calc(25%);
 	margin-bottom:calc(7.5%);
-
-
 	transition: opacity .25s ease-in-out, margin-bottom .5s, width .25s ease-in-out;
 
 }
 
 #Showcase .box:hover .category{
-	margin-top:70%;
+	margin-top:20%;
 	transition: margin-top .25s ease-in-out;
 
 }
@@ -145,9 +143,9 @@ body{
 
 
 #Showcase iframe{
-	height:50px;
-	width:50px;
+	background:black;
 	opacity:0;
+	pointer-events:none;
 	z-index:-1;
 }
 
