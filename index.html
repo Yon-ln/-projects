@@ -1,116 +1,38 @@
 <!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Doanh Luu Nguyen</title>
+
+<HTML>
+	<head> 
+		<title> yon </title> 
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<meta name="description" content=""/>
 		<link rel="stylesheet" href="./style.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>	
+		
 	</head>
+	
+	<body class="is-preload">
+		<section id="Home">
+			<header>
+			
+			</header>
+		</section>
 
+		<section id="Showcase">
+			<div class="background">
 
-
-
-	<body class="is-preload", >
-		<header>
-			<div class="container">
-				<div id="home">
-				<h1><span class="highlight">Doanh</span> Luu Nguyen</h1>
 			</div>
-			<nav>
-				<ul>
-				<li class="current"><a href="index.html">Home</a></li>
-				<li><a href="index.html">Games</a></li>
-				<li><a href="index.html">Contact</a></li>
-				</ul>
-			</nav>
-		</header>
+		</section>
 
-	<section id="games">
-		<div class="container">
-			<h1>Games</h1>
-			<a href="#" id="Doctor Gear" class="button">Doctor Gear</a>
-			<a href="#" id="Dungeon Crawler" class="button">Dungeon Crawler</a>
-			<a href="#" id="The Last Hope" class="button">The Last Hope</a>
-			<a href="#" id="Romance Story" class="button">Romance Story</a>
-
-		</div>
+		<section id="SideBar">
+			<div class="bar"></div>
+		</section>
 
 
-	</section>
 
-		<div class="bg-modal1">
-			<div class="iframe-container2">
-				<iframe class="ratio2" src="./a/index.html"></iframe>
-			</div>
-		</div>
-
-		<div class="bg-modal2">
-			<div class="iframe-container1">
-				<iframe class="ratio1" src="./d/index.html"></iframe>
-			</div>
-		</div>
-
-		<div class="bg-modal3">
-			<div class="iframe-container2">
-				<iframe class="ratio2" src="./c/index.html"></iframe>
-			</div>
-		</div>
-
-		<div class="bg-modal4">
-			<div class="iframe-container2">
-				<iframe class="ratio1" src="./a/index.html"></iframe>
-			</div>
-		</div>
 
 	</body>
 
+	<script src="./javascript.js" type="text/javascript"></script>
 
-
-	<script type="text/javascript">
-		
-		$(document).ready(function () {
-		var container = null;
-		var bg = null;
-		document.getElementById('Doctor Gear').onclick = function(){
-			document.querySelector('.bg-modal1').style.display = "flex";
-			bg = document.querySelector('.bg-modal1');
-			container = $(".iframe-container2");
-		}
-
-		document.getElementById('Dungeon Crawler').onclick = function(){
-			document.querySelector('.bg-modal2').style.display = "flex";
-			bg = document.querySelector('.bg-modal2');
-			container = $(".iframe-container1");
-		}
-
-		document.getElementById('The Last Hope').onclick = function(){
-			document.querySelector('.bg-modal3').style.display = "flex";
-			bg = document.querySelector('.bg-modal3');
-			container = $(".iframe-container2");
-		}
-
-		document.getElementById('Romance Story').onclick = function(){
-			document.querySelector('.bg-modal4').style.display = "flex";
-			bg = document.querySelector('.bg-modal4');
-			container = $(".iframe-container2");
-		}
-
-
-		
-		$(document).mouseup(function(e){
-
-			if(container != null && !container.is(e.target) && container.has(e.target).length === 0){
-				bg.style.display = "none";			
-			}
-
-
-		});
-});
-
-
-
-	</script>
-</html>
+<HTML>
