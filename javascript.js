@@ -68,7 +68,7 @@ for(var i = 0; i < Object.keys(work['games']).length; i++){
 					work['games'][x][5].style.zIndex = "-1";
 					work['games'][x][5].style.transition = "opacity .25s";
 					work['games'][x][6].zIndex = "initial";
-
+					work['games'][x][5].src = "";
 
 				} 
 			}
