@@ -1,3 +1,8 @@
+div.disabled {
+    overflow-x: hidden;    overflow-y: scroll;
+}
+
+
 /* Header */
 
 
@@ -19,7 +24,7 @@ body{
 
 #Showcase{
 	display:flex;
-	flex-wrap:wrap;
+	flex-wrap:wrap-reverse;
 	flex-basis: 10%;
 	position:absolute;
 	left:100px;
@@ -28,9 +33,7 @@ body{
 	width:calc(50% - 100px);
 	min-width:210px;
 	font-family: pixelFont;
-
-
-
+	z-index: "-100";
 }
 
 
@@ -58,7 +61,27 @@ body{
 	background-repeat: no-repeat;
 	justify-content:center;
 	min-width:80px;
+	z-index:0;
+	cursor: grab;
+	min-height:200px;
 	
+	transition: opacity .25s ease-in-out, margin-bottom .5s, width .25s ease-in-out;
+
+}
+
+#Showcase .temp{
+	position:relative;
+	margin: 12px 0 0 2%;
+	width: calc(20%);
+	height:100%;
+	border-radius: 7.5px;
+	background:black;
+	background-position:center;
+	background-size:450px;
+	background-repeat: no-repeat;
+	justify-content:center;
+	min-width:80px;
+	z-index:0;
 	cursor: grab;
 	min-height:200px;
 	
@@ -67,15 +90,22 @@ body{
 }
 
 #Showcase .box:hover{
-	opacity:0.9;
+	background: rgba(0,0,0,0.9);
 	width:calc(25%);
 	margin-bottom:calc(7.5%);
-	transition: opacity .25s ease-in-out, margin-bottom .5s, width .25s ease-in-out;
+	transition: background .25s ease-in-out, margin-bottom .5s, width .25s ease-in-out;
 
 }
 
+#Showcase .temp:hover{
+	width:calc(25%);
+	margin-bottom:calc(7.5%);
+	transition: background .25s ease-in-out, margin-bottom .5s, width .25s ease-in-out;	
+	z-index:10;
+}
+
 #Showcase .box:hover .category{
-	margin-top:20%;
+	margin-top:84%;
 	transition: margin-top .25s ease-in-out;
 
 }
@@ -110,7 +140,7 @@ body{
 		transition: width .25s ease-in-out;
 		justify-content:center;
 		min-width:80px;
-
+		z-index:0;
 
 		min-height:120px;
 	
@@ -118,15 +148,20 @@ body{
 	}
 
 	#Showcase .box:hover{
-		opacity:0.9;
 		width:calc(90px);
 		margin-bottom:calc(10%);
 
 
-		transition: opacity .25s ease-in-out, margin-bottom .5s, width .1s ease-in-out;
+		transition: margin-bottom .5s, width .1s ease-in-out;
 
 	}
 
+	#Showcase .temp:hover{
+		width:calc(25%);
+		margin-bottom:calc(7.5%);
+		transition: background .25s ease-in-out, margin-bottom .5s, width .25s ease-in-out;	
+		z-index:10;
+	}
 
 	#Showcase .category{
 	left:5%;
@@ -134,7 +169,7 @@ body{
 	width:90%;
 	height:60%;
 	min-width:50px;
-	border-radius:5px;;
+	border-radius:5px;
 	background-color:rgba(255,255,255,0.9);
 
 
@@ -143,9 +178,9 @@ body{
 
 
 #Showcase iframe{
+
 	background:black;
 	opacity:0;
-	pointer-events:none;
 	z-index:-1;
 }
 

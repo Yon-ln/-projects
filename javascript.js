@@ -1,12 +1,19 @@
 //find showcase
+
+
+
 var addTo = document.getElementById("Showcase");
 
 var work = new Array();
+var gameArea = document.getElementById("gameArea");
 
 var clicked = false;
 
 var tempHover = '#Showcase .box:hover{opacity:0.9;width:calc(25%);margin-bottom:calc(7.5%);transition: opacity .25s ease-in-out, margin-bottom .5s, width .25s ease-in-out;}'
 
+var current = null;
+
+var tempSwitch = 0;
 
 
 work['games'] = new Array();
@@ -17,9 +24,6 @@ work['games'][2] = ["The Last Hope", "./assets/the last hope icon.png", false, "
 work['games'][3] = ["Romance Story", "./assets/romance story icon.png", false, "1600px", "900px"];
 
 
-function showGame(index, game){
-
-}
 
 
 
@@ -33,7 +37,8 @@ for(var i = 0; i < Object.keys(work['games']).length; i++){
 
 		var game = document.createElement("iframe");
 		game.style.position = "relative";
-		game.src = "./" + work['games'][i][0] + "/index.html";
+		game.style.height = 0;
+		game.style.width = 0;
 
 		div.height = "";
 		var text = document.createElement("div");
@@ -55,23 +60,27 @@ for(var i = 0; i < Object.keys(work['games']).length; i++){
 			for(var x = 0; x < Object.keys(work['games']).length; x++){
 				
 				if(work['games'][x] != work['games'][i]){
-					console.log(x);
 
-					game.position = "fixed";
+					
 					work['games'][x][5].style.width = 0;
 					work['games'][x][5].style.height = 0;
 					work['games'][x][5].style.opacity = "0";
 					work['games'][x][5].style.zIndex = "-1";
 					work['games'][x][5].style.transition = "opacity .25s";
+					work['games'][x][6].zIndex = "initial";
+
 
 				} 
 			}
-			game.position = "fixed";
+			
+			game.src = "./" + work['games'][i][0] + "/index.html";
 			game.style.width = work['games'][i][3];
 			game.style.height = work['games'][i][4];
 			game.style.opacity = "1";
 			game.style.zIndex = "5";
-			game.style.transition = "opacity .25s, width .25s, height .25s";
+			addTo.insertBefore(div, addTo.children[0]);
+			game.style.transition = "opacity .25s, width .25s, height .25s, position .25s";
+			current = div;
 
           }
         }(i)));
@@ -85,3 +94,26 @@ for(var i = 0; i < Object.keys(work['games']).length; i++){
 
 
 
+
+
+
+function hey(){
+	
+	setTimeout(hey, 100);
+	if(current != null){
+		$(current).hover(function() {
+			
+			current.className = "temp";
+
+		}, function() {
+
+			current.className = "box";
+
+		});
+	}
+}
+
+
+
+
+hey();
