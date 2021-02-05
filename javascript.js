@@ -18,7 +18,7 @@ var tempSwitch = 0;
 
 work['games'] = new Array();
 
-work['games'][4] = ["Ping Pong","./assets/romance story icon.png", false, "1600px", "900px"];
+work['games'][0] = ["Ping Pong","./assets/romance story icon.png", false, "1600px", "900px"];
 
 
 
