@@ -18,10 +18,6 @@ var tempSwitch = 0;
 
 work['games'] = new Array();
 
-work['games'][0] = ["Doctor Gear", "./assets/doctor gear icon.png", false, "1600px", "900px"];
-work['games'][1] = ["Dungeon Crawler", "./assets/dungeon crawler icon.png", false, "600px", "600px"];
-work['games'][2] = ["The Last Hope", "./assets/the last hope icon.png", false, "1600px", "900px"];
-work['games'][3] = ["Romance Story", "./assets/romance story icon.png", false, "1600px", "900px"];
 work['games'][4] = ["Ping Pong","./assets/romance story icon.png", false, "1600px", "900px"];
 
 
@@ -92,11 +88,6 @@ for(var i = 0; i < Object.keys(work['games']).length; i++){
 
 	}());
 }
-
-
-
-
-
 
 function hey(){
 	
