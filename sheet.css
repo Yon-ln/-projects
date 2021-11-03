@@ -17,7 +17,7 @@
 
     --fs-h1: 1.5rem;
     --fs-h2: 1.35rem;
-    --fs-h3: 0.9rem;
+    --fs-h3: 1.2rem;
     --fs-body: 0.8rem;
 
     --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
@@ -25,14 +25,17 @@
 
     --bs-light: 0.1em 0.1em 0.3em rgba(0,0,0,.25),
           0.05em 0.05em 0.1em rgba(0,0,0,.15);
+
+    --bs-inset: inset 0.1em 0.1em 0.3em rgba(0,0,0,.25),
+    inset 0.05em 0.05em 0.1em rgba(0,0,0,.15);
 }
 
-@media (min-width: 300px){
+@media (min-width: 600px){
     :root{
-        --fs-h1: 2.0rem;
-        --fs-h2: 1.75rem;
-        --fs-h3: 1.0rem;
-        --fs-body: 0.95rem;
+        --fs-h1: 2rem;
+        --fs-h2: 1.85rem;
+        --fs-h3: 1.2rem;
+        --fs-body: 0.9rem;
     }
 }
 
@@ -89,8 +92,6 @@ p{
 
 }
 
-
-
 .section_subtitle{
     margin:0;
     font-size: var(--fs-h3);
@@ -109,39 +110,43 @@ nav { display: none; }
 /* Introduction */
 
 .intro {
+    display: grid;
+    width: min-content;
+    margin: 0 auto;
+    grid-column-gap: 1em;
+    grid-template-areas:
+    "img title"
+    "img subtitle";
     position: relative;
 
+    grid-template-columns: min-content max-content;
 }
 
 .intro__img{
+    grid-area: img;
     box-shadow: var(--bs);
+    position: relative;
+    z-index: 2;
+    max-width: 150px;
+    border-radius: 50%;
 }
 
 .section__subtitle--intro{
-    display:inline-block;
+
     border-radius: 1em;
-    top:5em;
+    
 }
 
 @media (min-width: 600px){
     .intro{
-        display: grid;
-        width: min-content;
-        margin: 0 auto;
-        grid-column-gap: 1em;
-        grid-template-areas:
-        "img title"
-        "img subtitle";
+        top: 0em;
 
-        grid-template-columns: min-content max-content;
     }
 
     .intro__img{
         grid-area: img;
-        min-width: 250px;
-        position: relative;
-        z-index: 2;
-        border-radius: 50%;
+        min-width: 200px;
+
     }
 
 
@@ -160,50 +165,64 @@ nav { display: none; }
 
 .global-showcase{
     position: relative;
+    display: grid;
+    width: min-content;
+    margin: 0 auto;
+    grid-template-areas: 
+    "Info"
+    "imgA"
+    "imgB";
+
+    grid-template-rows: min-content max-content;
+    top:-5em;
 }
 
 .showcase_arrow{
+    grid-area:imgA;
     font-family: var(--ff-primary);
+    margin: 0 auto;
+    top: 9.5em;
+    z-index: 2;
+    position: relative;
 }
 .showcase_border{
+    grid-area:imgB;
     border-color: var(--clr-dark);
     border-width: 1px;
     border-style: solid;
+    border-radius: 1em;
+
+    position: relative;
+    min-width: 300px;
+    min-height: 300px;
+    top: 9.45em;
+    width: calc(100%);
+
+    box-shadow: var(--bs);
 }
 
 @media (min-width: 600px){
     .global-showcase{
-        display: grid;
-        width: min-content;
-        margin: 10em auto;
-        grid-template-areas: 
-    
-        "imgA"
-        "imgB";
-    
-        grid-template-rows: min-content max-content;
+
+        top: -5.5em;
+        min-width:600px;
     } 
+    
+    .container{
+        z-index: 3;
+    }
 
 
     .showcase_arrow{
-        grid-area:imgA;
-        margin-left: auto;
-        margin-right: auto;
-        min-width: 5px;
-        max-height: 25px;
-        position: relative;
+        
         z-index: 2;
+
     }
 
     .showcase_border{
-        grid-area:imgB;
+        z-index: -1;
         min-width: 500px;
-        min-height: 300px;
-        border-radius: 1em;
-        box-shadow: var(--bs);
-        position: relative;
-        top: -0.1em;
-        width: calc(100% + 1.5em);
+        min-height: 500px;
 
     }
 }
@@ -275,6 +294,9 @@ nav { display: none; }
 
 /* */
 .container {
+    grid-area:Info;
+    position: relative;
+    z-index: 3;
     height: 0px;
     width: 180px;
     display: grid;
@@ -283,10 +305,10 @@ nav { display: none; }
     "cat"
     "con";
     margin: 0 auto;
-    align-self: center;
+
 
     font-family: var(--ff-primary);
-    opacity: 0;
+
 
     animation: appear 0.25s ease-out 1s forwards;
 
@@ -337,7 +359,7 @@ nav { display: none; }
 .content::-webkit-scrollbar-thumb{
     border-width: 1px;
     border-color: black;
-    border-style: solid;  
+    border-style: solid;
 }
 
 .pad {
@@ -354,6 +376,8 @@ nav { display: none; }
     border-radius: 5px;
     border-color: black;
     border-style: solid;
+
+    box-shadow: var(--bs-inset);
 
     
 }
