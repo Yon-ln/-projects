@@ -6,7 +6,7 @@
 
 @font-face{
     font-family: "Nitw";
-    src: url("/Nitw.otf");
+    src: url(./Nitw.otf);
 }
 
 :root {
@@ -83,7 +83,8 @@ p{
 }
 
 .logo{
-    max-width: calc(30% + 2.5em);
+    position: absolute;
+    max-width: calc(20%);
 }
 
 .section__title{
