@@ -1,0 +1,210 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --fn-primary: "Night In The Woods";
+    --ff-primary: 'var(--fn-primary)', monospace;
+    
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    --clr-light: #fff;
+    --clr-dark: #303030;
+
+    --fs-h1: 1.5rem;
+    --fs-h2: 1.35rem;
+    --fs-h3: 0.9rem;
+    --fs-body: 0.8rem;
+}
+
+@media (min-width: 300px){
+    :root{
+        --fs-h1: 2.0rem;
+        --fs-h2: 1.75rem;
+        --fs-h3: 1.0rem;
+        --fs-body: 0.95rem;
+    }
+}
+
+@font-face{
+    font-family: 'var(--fn-primary)';
+    src: url('./Nitw.otf') format('otf');
+}
+
+/* General */
+
+body{
+    background: var(--clr-light);
+    color: var(--clr-dark);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+}
+
+/* Typography */
+
+h1,
+h2,
+h3 {
+    line-height: 1;
+    margin: 0;
+}
+
+h1 {font-size : var(--fs-h1)}
+h2 {font-size : var(--fs-h2)}
+h3 {font-size : var(--fs-h3)}
+
+p{
+    font-family: var(--ff-primary);
+}
+
+.section__title{
+    margin-bottom: .25em;
+    align-self: center;
+}
+
+.section__title--intro{
+    font-family: var(--ff-primary);
+}
+
+.section__title--intro strong{
+    display: block;
+}
+
+.container {
+    height: 0px;
+    width: 180px;
+    display: grid;
+    grid-template-rows: 25px 75px;
+    grid-template-areas:
+    "cat"
+    "con";
+    margin: 0 auto;
+    align-self: center;
+
+    font-family: var(--ff-primary);
+    opacity: 0;
+
+    animation: appear 0.25s ease-out 1s forwards;
+
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+
+    -ms-user-select: none;
+    user-select: none;
+
+
+}
+
+@keyframes appear {
+    to{
+        opacity: 1;
+    }
+
+}
+
+.category {
+    grid-area: cat;
+    display: grid;
+    grid-template-columns: 60px 60px 60px;
+
+}
+
+.content {
+    grid-area: con;
+    display: grid;
+    grid-template-columns: 30px 20px 130px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    grid-auto-flow: row;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.content::-webkit-scrollbar{
+    width:0px;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+}
+
+.content::-webkit-scrollbar-thumb{
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;   
+}
+
+.pad {
+    padding: 8px;
+}
+
+.scroll {
+    display:inline-block;
+    position:absolute;
+    width: 4px;
+    height: 55px;
+
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: black;
+    border-style: solid;
+
+    
+}
+
+.checkbox {
+    display: grid;
+    grid-auto-rows: 24.33333333px;
+    align-items: center;
+  
+}
+
+#box{
+    content:url('unchecked.png');
+    transition: content 0.5s ease-in;
+}
+
+
+.items {
+    display: grid;
+    grid-auto-rows: 24.33333333px;
+    align-items: center;
+    margin-left: 5px;
+    padding-right: 8px;
+    
+}
+
+.hoverable {
+    padding-left: 5px;
+}
+
+.hoverable:hover {
+    border-width: 1px;
+    border-color: black;
+    border-style: dotted;
+    cursor: pointer;
+}
+
+.categories {
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+#unselected:hover {
+    text-decoration: underline;
+}
+
+
+
+
