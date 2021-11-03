@@ -4,9 +4,14 @@
     box-sizing: border-box;
 }
 
+@font-face{
+    font-family: "Nitw";
+    src: url("/Nitw.otf");
+}
+
 :root {
-    --fn-primary: "Source Code Pro";
-    --ff-primary: 'var(--fn-primary)', monospace;
+    --ff-primary: "Nitw";
+
     
     --fw-reg: 250;
     --fw-bold: 900;
@@ -75,6 +80,10 @@ h3 {font-size : var(--fs-h3)}
 
 p{
     font-family: var(--ff-primary);
+}
+
+.logo{
+    max-width: calc(30% + 2.5em);
 }
 
 .section__title{
@@ -210,6 +219,7 @@ nav { display: none; }
     
     .container{
         z-index: 3;
+        
     }
 
 
@@ -305,10 +315,6 @@ nav { display: none; }
     "cat"
     "con";
     margin: 0 auto;
-
-
-    font-family: var(--ff-primary);
-
 
     animation: appear 0.25s ease-out 1s forwards;
 
