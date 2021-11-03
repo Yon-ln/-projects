@@ -5,19 +5,26 @@
 }
 
 :root {
-    --fn-primary: "Night In The Woods";
+    --fn-primary: "Source Code Pro";
     --ff-primary: 'var(--fn-primary)', monospace;
     
-    --fw-reg: 300;
+    --fw-reg: 250;
     --fw-bold: 900;
 
     --clr-light: #fff;
     --clr-dark: #303030;
+    --clr-accent: rgb(152, 151, 232);
 
     --fs-h1: 1.5rem;
     --fs-h2: 1.35rem;
     --fs-h3: 0.9rem;
     --fs-body: 0.8rem;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
+          0.125em 0.125em 0.25em rgba(0,0,0,.15);
+
+    --bs-light: 0.1em 0.1em 0.3em rgba(0,0,0,.25),
+          0.05em 0.05em 0.1em rgba(0,0,0,.15);
 }
 
 @media (min-width: 300px){
@@ -27,11 +34,6 @@
         --fs-h3: 1.0rem;
         --fs-body: 0.95rem;
     }
-}
-
-@font-face{
-    font-family: 'var(--fn-primary)';
-    src: url('./Nitw.otf') format('otf');
 }
 
 /* General */
@@ -45,6 +47,10 @@ body{
     line-height: 1.6;
 }
 
+section{
+    padding: 5em 2em;
+}
+
 img{
     display: block;
     max-width: 100%;
@@ -56,6 +62,7 @@ h1,
 h2,
 h3 {
     line-height: 1;
+    font-weight: var(--fw-reg);
     margin: 0;
 }
 
@@ -69,7 +76,7 @@ p{
 
 .section__title{
     margin-bottom: .25em;
-    align-self: center;
+    align-self: start;
 }
 
 .section__title--intro{
@@ -78,8 +85,195 @@ p{
 
 .section__title--intro strong{
     display: block;
+    font-weight: var(--fw-bold);
+
 }
 
+
+
+.section_subtitle{
+    margin:0;
+    font-size: var(--fs-h3);
+}
+
+.section__subtitle--intro,
+.section__subtitle--about {
+    background: var(--clr-accent);
+    color: var(--clr-light);
+    font-weight: var(--fw-bold);
+    padding: 1.5em;
+}
+
+nav { display: none; }
+
+/* Introduction */
+
+.intro {
+    position: relative;
+
+}
+
+.intro__img{
+    box-shadow: var(--bs);
+}
+
+.section__subtitle--intro{
+    display:inline-block;
+    border-radius: 1em;
+    top:5em;
+}
+
+@media (min-width: 600px){
+    .intro{
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-column-gap: 1em;
+        grid-template-areas:
+        "img title"
+        "img subtitle";
+
+        grid-template-columns: min-content max-content;
+    }
+
+    .intro__img{
+        grid-area: img;
+        min-width: 250px;
+        position: relative;
+        z-index: 2;
+        border-radius: 50%;
+    }
+
+
+
+    .section__subtitle--intro{
+        align-self: start;
+        grid-column: -1/ 1;
+        grid-row: 2;
+        text-align: right;
+        position: relative;
+        left: -1.5em;
+        top: -2em;
+        width: calc(100% + 1.5em);
+    }
+}
+
+.global-showcase{
+    position: relative;
+}
+
+.showcase_arrow{
+    font-family: var(--ff-primary);
+}
+.showcase_border{
+    border-color: var(--clr-dark);
+    border-width: 1px;
+    border-style: solid;
+}
+
+@media (min-width: 600px){
+    .global-showcase{
+        display: grid;
+        width: min-content;
+        margin: 10em auto;
+        grid-template-areas: 
+    
+        "imgA"
+        "imgB";
+    
+        grid-template-rows: min-content max-content;
+    } 
+
+
+    .showcase_arrow{
+        grid-area:imgA;
+        margin-left: auto;
+        margin-right: auto;
+        min-width: 5px;
+        max-height: 25px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .showcase_border{
+        grid-area:imgB;
+        min-width: 500px;
+        min-height: 300px;
+        border-radius: 1em;
+        box-shadow: var(--bs);
+        position: relative;
+        top: -0.1em;
+        width: calc(100% + 1.5em);
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* */
 .container {
     height: 0px;
     width: 180px;
@@ -103,7 +297,7 @@ p{
     -ms-user-select: none;
     user-select: none;
 
-
+    
 }
 
 @keyframes appear {
@@ -130,6 +324,7 @@ p{
     grid-auto-flow: row;
     overflow-y: scroll;
     overflow-x: hidden;
+    box-shadow: var(--bs);
 }
 
 .content::-webkit-scrollbar{
@@ -142,7 +337,7 @@ p{
 .content::-webkit-scrollbar-thumb{
     border-width: 1px;
     border-color: black;
-    border-style: solid;   
+    border-style: solid;  
 }
 
 .pad {
@@ -167,12 +362,13 @@ p{
     display: grid;
     grid-auto-rows: 24.33333333px;
     align-items: center;
-  
+    
 }
 
 #box{
     content:url('unchecked.png');
     transition: content 0.5s ease-in;
+    box-shadow: var(--bs-light);
 }
 
 
