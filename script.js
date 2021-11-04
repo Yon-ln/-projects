@@ -1,6 +1,7 @@
 var checkboxes = document.getElementById("cb");
 var items = document.getElementById("i");
 var category = document.querySelectorAll(".categories")
+var selected;
 
 var scrollheight = document.getElementById("s").scrollHeight;
 
@@ -21,12 +22,19 @@ for(const [key, value] of Object.entries(categories)){
         item.mystring = key;
         item.className = "hoverable";
         item.addEventListener("click", function(evt){
+            if(evt.currentTarget.id != selected){
+
             for(var j = 0; j < document.querySelector("[id^='cb']").children.length; ++j){
                 document.querySelector("[id^='cb']").children[j].id = "box";
 
             }
 
             document.querySelector("[id^='cb']").children[evt.currentTarget.my].id = "box-s"
+            var documentName = evt.currentTarget.id + '.html';
+            selected = evt.currentTarget.id;
+            document.getElementById(''+evt.currentTarget.mystring).querySelector("iframe").src = categories[''+evt.currentTarget.mystring][2][0] + documentName;
+            
+            }
             
         });
 
@@ -44,6 +52,7 @@ for(const [key, value] of Object.entries(categories)){
 
 for(var i = 0; i < category.length; ++ i){
     category[i].addEventListener("click", function(evt){
+        
         for(var j = 0; j < category.length; ++j){
             document.getElementById(''+j).style.display = "none";
             category[j].id = "unselected";
@@ -65,6 +74,7 @@ for(var i = 0; i < category.length; ++ i){
 
         if(!checkboxSelected){
             categories[''+evt.currentTarget.my][1][1].children[0].id = "box-s";
+            document.getElementById(''+evt.currentTarget.my).querySelector("iframe").src = categories[''+evt.currentTarget.my][2][0] + categories[''+evt.currentTarget.my][0][0] + '.html';
         }
 
     });
