@@ -135,7 +135,24 @@ p{
 }
 
 nav { display: none; }
+/* Embeds */
 
+
+.emb::-webkit-scrollbar{
+
+    width:0px;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+}
+
+
+.emb::-webkit-scrollbar-thumb{
+
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+}
 /* Introduction */
 
 .intro {
@@ -257,6 +274,7 @@ nav { display: none; }
     border-color: black;
     border-style: solid;
 }
+
 
 .information--games,
 .information--art,
