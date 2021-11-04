@@ -32,15 +32,19 @@ for(var i = 0; i < category.length; ++ i){
 
 for(const [key, value] of Object.entries(categories)){
     for (var i = 0; i < value[0].length; i++){
-        const game = document.createElement("div");
+        const item = document.createElement("div");
         const box = document.createElement("div");
-        game.innerText = value[0][i];
-        game.className = "hoverable";
+        item.innerText = value[0][i];
+        item.className = "hoverable";
+        // item.addEventListener("click", function(evt){
+
+        // });
+
         box.id = "box";
 
         value[1][0].className = "items";
         value[1][0].id = "i";
-        value[1][0].appendChild(game);
+        value[1][0].appendChild(item);
         value[1][1].className = "checkbox";
         value[1][1].id = "cb";
         value[1][1].appendChild(box);       
