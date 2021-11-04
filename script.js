@@ -5,8 +5,8 @@ var category = document.querySelectorAll(".categories")
 var scrollheight = document.getElementById("s").scrollHeight;
 
 var categories = {
-"0" : [["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve"], [document.createElement('div'), document.createElement('div')]],
-"1" : [["Dragon","Models","Pixel Art","Sketches","Boats","Environment","Anisa","Hi"], [document.createElement('div'), document.createElement('div')]],
+"0" : [["One", "Two", "Three", "Four", "Five"], [document.createElement('div'), document.createElement('div')]],
+"1" : [["Pixel Art","Sketches","Environment","Anisa","Hi"], [document.createElement('div'), document.createElement('div')]],
 "2" : [["CV", "Contacts", "Socials"],[document.createElement('div'), document.createElement('div')]]
 
 };
