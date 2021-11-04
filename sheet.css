@@ -214,6 +214,28 @@ nav { display: none; }
     box-shadow: var(--bs);
 }
 
+.information{
+    position: absolute;
+    width : calc(100% - 1em);
+    height : calc(100% - 1em);
+    left: 0.5em;
+    top: 0.5em;
+    border-color: var(--clr-dark);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 1em;
+}
+
+.information--games,
+.information--art,
+.information--info{
+    position: relative;
+    display: block;
+
+}
+
+
+
 @media (min-width: 600px){
     .global-showcase{
 
@@ -432,6 +454,10 @@ nav { display: none; }
 }
 
 #unselected:hover {
+    text-decoration: underline;
+}
+
+#selected{
     text-decoration: underline;
 }
 
