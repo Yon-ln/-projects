@@ -12,7 +12,6 @@ window.mobileCheck = function() {
   };
 
 
-
 var categories = {
 "0" : [["One", "Two", "Three", "Four", "Five"], [document.createElement('div'), document.createElement('div')], ['Directory/Games/']],
 "1" : [["Pixel Art","Sketches","Environment","Anisa","Hi"], [document.createElement('div'), document.createElement('div')], ['Directory/Artwork/']],
@@ -97,6 +96,88 @@ category[0].click();
 /*if (window.matchMedia( "(hover: none)" ).matches) {
 
  }*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const dataResponse = (_data) =>{
+//     data = _data;
+// }
+
+// let data;
+// var dictionary = {"Games" : {}, "ArtWork" : {}, "Information" : {}};
+
+// (() => {
+//     var raw = new XMLHttpRequest();
+//     raw.open("GET", "data.txt", false);
+//     raw.onreadystatechange = () =>{
+//         if(raw.readyState === 4){
+//             if(raw.status === 200 || raw.status === 0){
+//                 dataResponse(raw.responseText.split("\n").map(e=>e.trim("r")).map(e=>e.trim("\\")));
+//                 console.log("Data Loaded");
+//             }
+//         }    
+//     }
+    
+//     raw.send(null);
+// })()
+
+// for(var item of data){ //item = "{"Category", "Name", "Date"}"
+//     var currentArray = item.split(",");
+//     dictionary[item[0][]]
+    
+// }
+
+
+// const dictionary = {
+//     "Games" : {
+//         "Elements" : [],
+//         "Directory" : "",
+        
+//         "Items" : {
+//             0 : {
+//                 "Text" : "Dungeon Crawler",
+//                 "Date" : "",
+
+//             },
+//             1 : {
+//                 "Text" : "Doctor Gear",
+//                 "Date" : "",
+//             },
+            
+//         },
+
+//     },
+//     "ArtWork" : {},
+//     "Information" : {}
+// }
+
+
+// const readTextFile = (file) =>{
+//     var array;
+//     var raw = new XMLHttpRequest();
+//     raw.open("GET", file, true);
+//     raw.onreadystatechange = () =>{
+//         if(raw.readyState === 4){
+//             if(raw.status === 200 || raw.status === 0){
+//                 array = raw.responseText.split("\n").map(e=>e.trim("r"));
+//                 alert(array);
+//                 return array;
+//             }
+//         }    
+//     }
+//     raw.send(null);
+// };
 
 
 
