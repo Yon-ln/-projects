@@ -33,9 +33,24 @@ for(const [key, value] of Object.entries(categories)){
             document.querySelector("[id^='cb']").children[evt.currentTarget.my].id = "box-s"
             var documentName = evt.currentTarget.id + '.html';
             selected = evt.currentTarget.id;
-            document.getElementById(''+evt.currentTarget.mystring).querySelector("iframe").src = categories[''+evt.currentTarget.mystring][2][0] + documentName;
             
-            }
+            
+            document.getElementById("ani").classList.remove("showcase_border-switched");
+            document.getElementById("ani").classList.remove("showcase_border-down");
+            document.getElementById("ani").style.top = "0em";
+            document.getElementById("ani").removeEventListener("animationend", endDown, true);
+            document.getElementById("ani").dataset.mystring = evt.currentTarget.mystring;
+
+            setTimeout(function(){
+                document.getElementById("ani").classList.add("showcase_border-switched");
+                setTimeout(function(){
+                    document.getElementById(''+document.getElementById("ani").dataset.mystring).querySelector("iframe").src = categories[''+document.getElementById("ani").dataset.mystring][2][0] + documentName;
+                }, 50);
+            })
+
+        }
+            
+
             
         });
 
@@ -75,12 +90,42 @@ for(var i = 0; i < category.length; ++ i){
 
         if(!checkboxSelected){
             categories[''+evt.currentTarget.my][1][1].children[0].id = "box-s";
-            document.getElementById(''+evt.currentTarget.my).querySelector("iframe").src = categories[''+evt.currentTarget.my][2][0] + categories[''+evt.currentTarget.my][0][0] + '.html';
+            if(document.getElementById("ani").classList.contains("showcase_border-down")||document.getElementById("ani").classList.contains("showcase_border-switched")){
+                document.getElementById("ani").classList.remove("showcase_border-switched");
+                document.getElementById("ani").classList.remove("showcase_border-down");
+                document.getElementById("ani").style.top = "0em";
+                document.getElementById("ani").dataset.mystring = evt.currentTarget.my;
+                document.getElementById("ani").removeEventListener("animationend", endDown, true);
+
+                setTimeout(function(){
+                    document.getElementById("ani").classList.add("showcase_border-switched");
+                    setTimeout(function(){
+                        document.getElementById(''+document.getElementById("ani").dataset.mystring).querySelector("iframe").src = categories[''+document.getElementById("ani").dataset.mystring][2][0] + categories[''+document.getElementById("ani").dataset.mystring][0][0] + '.html';
+                    }, 100);
+                })
+
+
+            } else{
+                document.getElementById(''+evt.currentTarget.my).querySelector("iframe").src = categories[''+evt.currentTarget.my][2][0] + categories[''+evt.currentTarget.my][0][0] + '.html';
+                document.getElementById("ani").classList.add("showcase_border-down");
+                document.getElementById("ani").addEventListener("animationend", endDown, true);
+            }
+            
+            
+            
         }
 
     });
 
     category[i].my = i;
+}
+
+function endDown(){
+    document.getElementById("ani").style.top = "-37.5em";
+}
+
+function endSwitch(){
+
 }
 
 category[0].click();
