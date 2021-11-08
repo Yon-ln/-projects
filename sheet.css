@@ -225,11 +225,11 @@ nav { display: none; }
 }
 
 .showcase_border-down{
-    animation: down 2s ease-out 2s forwards;
+    animation: down 2s ease-out 0.5s forwards;
 }
 
 .showcase_border-switched{
-    animation: switch 2s ease-out 1s forwards;
+    animation: switch 2s ease-out 0.25s forwards;
 }
 
 @keyframes down{

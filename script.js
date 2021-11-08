@@ -45,7 +45,7 @@ for(const [key, value] of Object.entries(categories)){
                 document.getElementById("ani").classList.add("showcase_border-switched");
                 setTimeout(function(){
                     document.getElementById(''+document.getElementById("ani").dataset.mystring).querySelector("iframe").src = categories[''+document.getElementById("ani").dataset.mystring][2][0] + documentName;
-                }, 1500);
+                }, 1075);
             })
 
         }
@@ -101,7 +101,7 @@ for(var i = 0; i < category.length; ++ i){
                     document.getElementById("ani").classList.add("showcase_border-switched");
                     setTimeout(function(){
                         document.getElementById(''+document.getElementById("ani").dataset.mystring).querySelector("iframe").src = categories[''+document.getElementById("ani").dataset.mystring][2][0] + categories[''+document.getElementById("ani").dataset.mystring][0][0] + '.html';
-                    }, 1500);
+                    }, 1075);
                 })
 
 
