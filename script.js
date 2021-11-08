@@ -68,17 +68,22 @@ for(const [key, value] of Object.entries(categories)){
 
 for(var i = 0; i < category.length; ++ i){
     category[i].addEventListener("click", function(evt){
-        
-        for(var j = 0; j < category.length; ++j){
-            document.getElementById(''+j).style.display = "none";
-            category[j].id = "unselected";
+        var n = document.getElementById(''+evt.currentTarget.my);
+        var f = evt.currentTarget.my;
 
-        }   
-        document.getElementById(''+evt.currentTarget.my).style.display = 'block';
+        setTimeout(function(){
+            for(var j = 0; j < category.length; ++j){
+                document.getElementById(''+j).style.display = "none";
+                category[j].id = "unselected";
+    
+            }   
+            n.style.display = 'block';
+            
+            document.querySelector("[id^='i']").replaceWith(categories[''+f][1][0]);
+            document.querySelector("[id^='cb']").replaceWith(categories[''+f][1][1]);
+        }, 1075)
+
         category[evt.currentTarget.my].id = "selected";
-
-        document.querySelector("[id^='i']").replaceWith(categories[''+evt.currentTarget.my][1][0]);
-        document.querySelector("[id^='cb']").replaceWith(categories[''+evt.currentTarget.my][1][1]);
         
         var checkboxSelected = false;
 
@@ -118,6 +123,9 @@ for(var i = 0; i < category.length; ++ i){
     });
 
     category[i].my = i;
+
+
+    
 }
 
 function endDown(){
