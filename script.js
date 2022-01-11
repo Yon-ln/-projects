@@ -9,7 +9,7 @@ var scrollheight = document.getElementById("s").scrollHeight;
 var categories = {
 "0" : [["One", "Two", "Three", "Four", "Five"], [document.createElement('div'), document.createElement('div')], ['Directory/Games/']],
 "1" : [["Pixel Art","Sketches","Environment","Anisa","Hi"], [document.createElement('div'), document.createElement('div')], ['Directory/Artwork/']],
-"2" : [["CV", "Contacts", "Socials"],[document.createElement('div'), document.createElement('div')], ['Directory/Info/']]
+"2" : [["CV", "Contacts", "PrivacyPolicy"],[document.createElement('div'), document.createElement('div')], ['Directory/Info/']]
 
 };
 
