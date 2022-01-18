@@ -286,7 +286,7 @@ nav { display: none; }
 .information--info{
     position: absolute;
     display: inline-block;
-    left:0;
+    left:1em;
     top:0;
     overflow: hidden;
 }
@@ -548,13 +548,9 @@ nav { display: none; }
 
 
 .emb{
-    font-family: "Nitw";
-    height:380px;
+    height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
-    text-align: center;
-    
-
 }
 
 .emb::-webkit-scrollbar{

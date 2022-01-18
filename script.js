@@ -7,7 +7,7 @@ const isMobile = navigator.userAgentData.mobile;
 var scrollheight = document.getElementById("s").scrollHeight;
 
 var categories = {
-"0" : [["One", "Two", "Three", "Four", "Five"], [document.createElement('div'), document.createElement('div')], ['Directory/Games/']],
+"0" : [["Dungeon Crawler", "Specter", "Three", "Four", "Five"], [document.createElement('div'), document.createElement('div')], ['Directory/Games/']],
 "1" : [["Pixel Art","Sketches","Environment","Anisa","Hi"], [document.createElement('div'), document.createElement('div')], ['Directory/Artwork/']],
 "2" : [["CV", "Contacts", "PrivacyPolicy"],[document.createElement('div'), document.createElement('div')], ['Directory/Info/']]
 
