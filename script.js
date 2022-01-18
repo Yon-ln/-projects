@@ -2,6 +2,7 @@ var checkboxes = document.getElementById("cb");
 var items = document.getElementById("i");
 var category = document.querySelectorAll(".categories")
 var selected;
+var switching = false;
 const isMobile = navigator.userAgentData.mobile;
 
 var scrollheight = document.getElementById("s").scrollHeight;
@@ -23,12 +24,10 @@ for(const [key, value] of Object.entries(categories)){
         item.mystring = key;
         item.className = "hoverable";
         item.addEventListener("click", function(evt){
-            if(evt.currentTarget.id != selected){
+        
 
-            for(var j = 0; j < document.querySelector("[id^='cb']").children.length; ++j){
-                document.querySelector("[id^='cb']").children[j].id = "box";
-
-            }
+        for(var j = 0; j < document.querySelector("[id^='cb']").children.length; ++j){
+            document.querySelector("[id^='cb']").children[j].id = "box";
 
             document.querySelector("[id^='cb']").children[evt.currentTarget.my].id = "box-s"
             var documentName = evt.currentTarget.id + '.html';
@@ -40,9 +39,10 @@ for(const [key, value] of Object.entries(categories)){
             document.getElementById("ani").style.top = "6em";
             document.getElementById("ani").removeEventListener("animationend", endDown, true);
             document.getElementById("ani").dataset.mystring = evt.currentTarget.mystring;
-
+            
             setTimeout(function(){
                 document.getElementById("ani").classList.add("showcase_border-switched");
+                
                 setTimeout(function(){
                     document.getElementById(''+document.getElementById("ani").dataset.mystring).querySelector("iframe").src = categories[''+document.getElementById("ani").dataset.mystring][2][0] + documentName;
                 }, 1075);
@@ -70,12 +70,14 @@ for(var i = 0; i < category.length; ++ i){
     category[i].addEventListener("click", function(evt){
         var n = document.getElementById(''+evt.currentTarget.my);
         var f = evt.currentTarget.my;
-
+        
+        
+        if(!switching){
         setTimeout(function(){
             for(var j = 0; j < category.length; ++j){
                 document.getElementById(''+j).style.display = "none";
                 category[j].id = "unselected";
-    
+                
             }   
             n.style.display = 'block';
             
@@ -93,37 +95,42 @@ for(var i = 0; i < category.length; ++ i){
             }
         }
 
-        if(!checkboxSelected){
-            categories[''+evt.currentTarget.my][1][1].children[0].id = "box-s";
-            if(document.getElementById("ani").classList.contains("showcase_border-down")||document.getElementById("ani").classList.contains("showcase_border-switched")){
-                document.getElementById("ani").classList.remove("showcase_border-switched");
-                document.getElementById("ani").classList.remove("showcase_border-down");
-                document.getElementById("ani").style.top = "6em";
-                document.getElementById("ani").dataset.mystring = evt.currentTarget.my;
-                document.getElementById("ani").removeEventListener("animationend", endDown, true);
+        if(!checkboxSelected) categories[''+evt.currentTarget.my][1][1].children[0].id = "box-s";
 
+        if(document.getElementById("ani").classList.contains("showcase_border-down")||document.getElementById("ani").classList.contains("showcase_border-switched")){
+            document.getElementById("ani").classList.remove("showcase_border-switched");
+            document.getElementById("ani").classList.remove("showcase_border-down");
+            document.getElementById("ani").style.top = "6em";
+            document.getElementById("ani").dataset.mystring = evt.currentTarget.my;
+            document.getElementById("ani").removeEventListener("animationend", endDown, true);
+
+            switching = false;
+
+            setTimeout(function(){
+                document.getElementById("ani").classList.add("showcase_border-switched");
+                switching = true;
                 setTimeout(function(){
-                    document.getElementById("ani").classList.add("showcase_border-switched");
-                    setTimeout(function(){
-                        document.getElementById(''+document.getElementById("ani").dataset.mystring).querySelector("iframe").src = categories[''+document.getElementById("ani").dataset.mystring][2][0] + categories[''+document.getElementById("ani").dataset.mystring][0][0] + '.html';
-                    }, 1075);
-                })
+                    document.getElementById(''+document.getElementById("ani").dataset.mystring).querySelector("iframe").src = categories[''+document.getElementById("ani").dataset.mystring][2][0] + categories[''+document.getElementById("ani").dataset.mystring][0][0] + '.html';
+                    switching = false;
 
-
-            } else{
-                document.getElementById(''+evt.currentTarget.my).querySelector("iframe").src = categories[''+evt.currentTarget.my][2][0] + categories[''+evt.currentTarget.my][0][0] + '.html';
-                document.getElementById("ani").classList.add("showcase_border-down");
-                document.getElementById("ani").addEventListener("animationend", endDown, true);
-            }
-            
-            
+                }, 1075);
+            })
+        } else{
+            document.getElementById(''+evt.currentTarget.my).querySelector("iframe").src = categories[''+evt.currentTarget.my][2][0] + categories[''+evt.currentTarget.my][0][0] + '.html';
+            document.getElementById("ani").classList.add("showcase_border-down");
+            document.getElementById("ani").addEventListener("animationend", endDown, true);
             
         }
-
+        
+        
+        
+    }
+    
+    
     });
 
     category[i].my = i;
-
+    
 
     
 }
