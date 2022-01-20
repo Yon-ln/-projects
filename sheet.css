@@ -284,7 +284,7 @@ nav { display: none; }
 .information--art,
 .information--info{
     position: absolute;
-    left:auto;
+    left:0;
     top:0;
     overflow: hidden;
 }
@@ -314,7 +314,7 @@ nav { display: none; }
 
     .information iframe{
         left:auto;
-        width: 520px;
+        width: 540px;
         height: 520px;
 
     }
