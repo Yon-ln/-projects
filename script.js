@@ -36,7 +36,7 @@ for(const [key, value] of Object.entries(categories)){
 
             document.getElementById("ani").classList.remove("showcase_border-switched");
             document.getElementById("ani").classList.remove("showcase_border-down");
-            document.getElementById("ani").style.top = "6em";
+            document.getElementById("ani").style.top = "8em";
             document.getElementById("ani").removeEventListener("animationend", endDown, true);
             document.getElementById("ani").dataset.mystring = evt.currentTarget.mystring;
 
@@ -100,7 +100,7 @@ for(var i = 0; i < category.length; ++ i){
         if(document.getElementById("ani").classList.contains("showcase_border-down")||document.getElementById("ani").classList.contains("showcase_border-switched")){
             document.getElementById("ani").classList.remove("showcase_border-switched");
             document.getElementById("ani").classList.remove("showcase_border-down");
-            document.getElementById("ani").style.top = "6em";
+            document.getElementById("ani").style.top = "8em";
             document.getElementById("ani").dataset.mystring = evt.currentTarget.my;
             document.getElementById("ani").removeEventListener("animationend", endDown, true);
 
