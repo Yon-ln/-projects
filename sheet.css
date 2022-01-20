@@ -284,7 +284,7 @@ nav { display: none; }
 .information--art,
 .information--info{
     position: absolute;
-    left:0;
+    left:auto;
     top:0;
     overflow: hidden;
 }
