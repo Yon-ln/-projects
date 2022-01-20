@@ -16,7 +16,7 @@ html{
 :root {
     --ff-primary: "Nitw";
 
-    
+
     --fw-reg: 250;
     --fw-bold: 900;
 
@@ -60,11 +60,11 @@ img{
 }
 
 iframe {
-    -moz-transform: scale(1, 1); 
-    -webkit-transform: scale(1, 1); 
-    -o-transform: scale(1, 1); 
-    -ms-transform: scale(1, 1); 
-    transform: scale(1, 1); 
+    -moz-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -o-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    transform: scale(1, 1);
     -moz-transform-origin: top left;
     -webkit-transform-origin: top left;
     -o-transform-origin: top left;
@@ -95,9 +95,8 @@ p{
     max-width: 5em;
     top:0em;
     min-height: 1em;
+    z-index: 10;
 }
-
-
 
 .section__title{
     z-index: 3;
@@ -188,7 +187,7 @@ nav { display: none; }
     width: min-content;
 
     margin: -8.5em auto;
-    grid-template-areas: 
+    grid-template-areas:
     "Info"
     "ws"
     "imgA"
@@ -220,8 +219,8 @@ nav { display: none; }
     display: inline-block;
     text-align: center;
 
-    box-shadow: var(--bs-light);   
-    
+    box-shadow: var(--bs-light);
+
 }
 
 .showcase_border-down{
@@ -270,7 +269,7 @@ nav { display: none; }
     width : calc(100% - 1em);
     height : calc(100% - 1em);
     top: 0.5em;
-    border-color: var(--clr-dark);
+    border-color: white;
     border-width: 1px;
     border-style: solid;
     border-radius: 1em;
@@ -285,45 +284,41 @@ nav { display: none; }
 .information--art,
 .information--info{
     position: absolute;
-    display: inline-block;
-    left:1em;
+    left:0em;
     top:0;
     overflow: hidden;
 }
 
 .information iframe{
+    margin-left:auto;
+    margin-right:auto;
     width: 380px;
     height:400px;
     src: "";
- 
-}
 
+}
 
 @media (min-width: 600px){
     .global-showcase{
         min-width:600px;
-        
-    } 
-
-    .showcase_arrow{
-        
-        z-index: 2;
-
     }
 
+    .showcase_arrow{
+        z-index: 2;
+    }
     .showcase_border{
         z-index: 1;
         min-width: 500px;
-        min-height: 500px;
-
+        min-height: 520px;
     }
 
     .information iframe{
+
         width: 520px;
-        height: 480px;
+        height: 520px;
 
     }
-    
+
 
 }
 
@@ -416,7 +411,7 @@ nav { display: none; }
     -ms-user-select: none;
     user-select: none;
 
-    
+
 }
 
 @keyframes appear {
@@ -476,14 +471,14 @@ nav { display: none; }
 
     box-shadow: var(--bs-inset);
 
-    
+
 }
 
 .checkbox {
     display: grid;
     grid-auto-rows: 24.33333333px;
     align-items: center;
-    
+
 }
 
 #box{
@@ -495,7 +490,7 @@ nav { display: none; }
 #box-s{
     content:url('checked.png');
     transition: content 0.5s ease-in;
-    box-shadow: var(--bs-light);  
+    box-shadow: var(--bs-light);
 }
 
 
@@ -505,7 +500,7 @@ nav { display: none; }
     align-items: center;
     margin-left: 5px;
     padding-right: 8px;
-    
+
 }
 
 .hoverable {
@@ -556,44 +551,24 @@ nav { display: none; }
 .emb::-webkit-scrollbar{
     width:4px;
     border-width: 1px;
-    border-color: black;
-    border-style: solid;
 }
 
 .emb::-webkit-scrollbar-thumb{
     border-width: 4px;
-    border-color: rgb(0, 0, 0);
+    border-color: white;
     border-style: solid;
 }
-
 
 .gifWrapper{
     position: relative;
     display:inline-block;
     margin: 0 auto;
     overflow: hidden;
-
 }
 
 .gifWrapper iframe{
     position: relative;
     height:300px;
     width:300px;
-
-}
-
-@media screen and (min-width: 600px){
-    .gifWrapper iframe{
-        position: relative;
-        height:450px;
-        width:450px;
-    
-    }
-    .emb{
-
-        height:800px;
-    }
-
-    
 
 }
