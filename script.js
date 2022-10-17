@@ -3,7 +3,6 @@ var items = document.getElementById("i");
 var category = document.querySelectorAll(".categories")
 var selected;
 var switching = false;
-const isMobile = navigator.userAgentData.mobile;
 
 var scrollheight = document.getElementById("s").scrollHeight;
 
