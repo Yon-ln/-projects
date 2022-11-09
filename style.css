@@ -1,8 +1,16 @@
+@font-face {
+    font-family: code;
+    src: url(cl.otf);
+
+  }
+  
+
 body {
     margin: 0px;
     height:100vh;
     display:grid;
     place-items:center;
+    font-family: code;
 }
 
 .card-group,
@@ -13,21 +21,17 @@ body {
 .card-group,
 .main-card {
     width: 60vmin;
-    display:grid;
-    place-items:center;
 }
 
 .main-card,
 .content{
     aspect-ratio: 16/9;
-
-    width: 60vmin;
-    position:relative;
 }
 
 .card {
     border-color: black;
     border-style:solid;
+    border-width:0.2vmin;
     position: absolute;
     transition: transform 1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -53,23 +57,42 @@ body {
     z-index:0;
 }
 
-.main-card[data-true-index="1"]:hover{
+/* .main-card[data-true-index="1"]:hover{
     transform: translateX(5%) translateY(-20%);
 }
 
 .main-card[data-true-index="2"]:hover{
     transform: translateX(10%) translateY(-25%);
+} */
+
+.socials {
+    position:absolute;
+    bottom:0;
+    margin-left:1vmin;
+}
+
+.information {
+    overflow:hidden;
+    background-color: rgb(247, 251, 255);
+    border-radius: 1vmin;
+    border-color:aliceblue;
+    border-style: solid;
+    border-width: 0.2vmin;
+    width:95%;
+    left:1.5vmin;
+    aspect-ratio: 16/6.75;
+    position:absolute;
+    
 }
 
 .icon {
-    width: 7.5vmin;
-    position:absolute;
+    width: 3.5vmin;
 }
 
 p{
-    font-size: 3.5vmin;
+    font-size: 3vmin;
     position:absolute;
-    bottom: -4vmin;
-    right: 0.5vmin;
+    bottom: -3vmin;
+    right: 1vmin;
 }
 

@@ -2,12 +2,10 @@ let activeIndex = 0;
 let previousIndex = activeIndex;
 const maxDist = 100;
 let distance = 0;
-let scrolling = false;
 const groups = document.getElementsByClassName("main-card");
-let g = [groups[0], groups[1], groups[2]];
 
-let locked = false;
-let lastCall = false;
+
+let g = [groups[0], groups[1], groups[2]].sort((a, b) => parseFloat(a.dataset.trueIndex) - parseFloat(b.dataset.trueIndex));
 
 function returnIndex(dist){
     const multiplier = 1/groups.length;
