@@ -18,16 +18,18 @@ body {
 }
 
 .main-card,
-.content {
+.content{
     aspect-ratio: 16/9;
+
     width: 60vmin;
+    position:relative;
 }
 
 .card {
     border-color: black;
     border-style:solid;
     position: absolute;
-    transition: transform 800ms cubic-bezier(0.075, 0.82, 0.165, 1)
+    transition: transform 1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .main-card {
@@ -35,43 +37,39 @@ body {
     border-radius: 1vmin;
     background-color: white;
 }
-/*    transform: translateX(-5%) translateY(5%); */
 
-.main-card[data-status="active"]{
-    z-index: 1;
+.main-card[data-true-index="0"]{
+    transform: translate(0%) translate(0%);
+    z-index: 2;
 }
 
-.main-card[data-status="inactive"],
-.main-card[data-status="after"]{
-    background-color: rgba(0,0,0,0);
-}
-
-.main-card[data-index="1"] {
+.main-card[data-true-index="1"]{
     transform: translateX(5%) translateY(-5%);
+    z-index:1;
 }
 
-.main-card[data-index="2"]{
+.main-card[data-true-index="2"]{
     transform: translateX(10%) translateY(-10%);
+    z-index:0;
 }
 
-.main-card[data-index="1"]:hover{
-    transform: translateX(5%) translateY(-15%);
+.main-card[data-true-index="1"]:hover{
+    transform: translateX(5%) translateY(-20%);
 }
 
-.main-card[data-index="2"]:hover{
-    transform: translateX(10%) translateY(-20%);
-}
-
-.content {
-    width:60vmin;
-    border-radius: 1vmin;
-    border-color:black;
-    display:grid;
+.main-card[data-true-index="2"]:hover{
+    transform: translateX(10%) translateY(-25%);
 }
 
 .icon {
     width: 7.5vmin;
-    aspect-ratio: 1;
-    position:relative;
+    position:absolute;
+}
+
+p{
+    font-size: 3.5vmin;
+    position:absolute;
+    bottom: -4vmin;
+    right: 0.5vmin;
 }
 
