@@ -33,6 +33,8 @@ function setIndex(index){
     }
     
     previousIndex = activeIndex;
+    bar[0].style.marginTop = 1.85 * (index/groups.length) * 100 + "px";
+
     activeIndex = index;
 
 }
@@ -47,7 +49,6 @@ window.addEventListener("wheel", function (event) {
     distance = distance + Math.sign(event.deltaY) <= maxDist - 1 ? distance + Math.sign(event.deltaY) : 0;
     if(distance < 0) distance = maxDist;
 
-    bar[0].style.marginTop = 1.85 * (activeIndex/groups.length) * 100 + "px";
     getToIndex(returnIndex(distance));
 
 }, false);
