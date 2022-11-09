@@ -24,8 +24,8 @@ body {
 }
 
 .card {
-    border-style: dotted;
     border-color: black;
+    border-style:solid;
     position: absolute;
     transition: transform 800ms cubic-bezier(0.075, 0.82, 0.165, 1)
 }
@@ -35,15 +35,16 @@ body {
     border-radius: 1vmin;
     background-color: white;
 }
-
-.transition-card{
-    width: 40vmin;
-    border-radius: 2vmin;
-}
-
 /*    transform: translateX(-5%) translateY(5%); */
 
+.main-card[data-status="active"]{
+    z-index: 1;
+}
 
+.main-card[data-status="inactive"],
+.main-card[data-status="after"]{
+    background-color: rgba(0,0,0,0);
+}
 
 .main-card[data-index="1"] {
     transform: translateX(5%) translateY(-5%);
@@ -64,7 +65,13 @@ body {
 .content {
     width:60vmin;
     border-radius: 1vmin;
-    border-style:dotted;
     border-color:black;
+    display:grid;
+}
+
+.icon {
+    width: 7.5vmin;
+    aspect-ratio: 1;
+    position:relative;
 }
 
