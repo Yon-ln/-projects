@@ -14,8 +14,9 @@ body {
 }
 
 .scrollbar {
-    left:16.5vmin;
-    position: fixed;
+    position: absolute;
+    margin-left:-3vmin;
+    margin-top:1.5vmin;
     height: 30vmin;
     aspect-ratio: 0.05;
     z-index: 3;
@@ -25,9 +26,9 @@ body {
 }
 
 .bar{
-    height:50%;
-    top:50px;
     background-color: black;
+    border-color: white;
+    border-style: solid;
     border-radius: 5vmin;
 }
 
