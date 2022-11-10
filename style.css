@@ -50,7 +50,7 @@ body {
     border-style:solid;
     border-width:0.2vmin;
     position: absolute;
-    transition: transform 1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 200ms linear;
     overflow:hidden;
 
 }
@@ -58,12 +58,14 @@ body {
 .main-card {
     width: 60vmin;
     border-radius: 1vmin;
-    background-color: white;
+
 }
 
 .main-card[data-true-index="0"]{
     transform: translate(0%) translate(0%);
     z-index: 2;
+    background-color: white;
+
 }
 
 .main-card[data-true-index="1"]{
@@ -87,13 +89,18 @@ body {
 .content{
     display: grid;
     grid-template: auto 1fr auto / auto 1fr auto;
+    margin: 0vmin 1vmin 0vmin 1vmin;
+
 }
+
+/**/
 
 .content .header{
     display:flex;
     padding-left:1vmin;
     grid-column:1/4;
 }
+
 
 .content .header img{
     height:3.5vmin;
@@ -110,11 +117,15 @@ body {
 .content .main{
     padding-left:1vmin;
     padding-right:1vmin;
-    margin:1vmin;
     overflow: hidden;
     border-style: dashed;
     border-radius: 1vmin;
-    border-width: 0.15vmin
+    border-width: 0.15vmin;
+
+}
+
+.content .main:hover{
+    background-color: aliceblue;
 }
 
 .content .main p{
@@ -122,15 +133,42 @@ body {
 }
 
 .content .footer{
-    height:3.5vmin;
-    padding:1vmin;
+    display: inline-block;
+    padding: 0.75vmin 1vmin 0vmin 1vmin;
     grid-column:1/4;
 }
 
-.footer .page{
-    position:absolute;
-    font-size:2.5vmin;
-    bottom:-1.5vmin;
-    right:2vmin;
+.footer .icon{
+    height:3vmin;
 }
 
+.footer .icon:hover{
+    border-style: solid;
+    border-radius: 1vmin;
+    border-width: 0.2vmin;
+}
+
+.footer .page{
+    margin:0vmin;
+    font-size:2.5vmin;
+    float:right;
+}
+
+.content .main .games{
+    display: grid;
+    grid-template: auto 1fr auto / auto 1fr auto;
+}
+
+.content .main .games
+.showcase {
+    padding: 1vmin;
+    grid-column: 1/4;
+}
+
+.blocks {
+    height:25vmin;
+    aspect-ratio: 1;
+    border-style: dashed;
+    border-radius: 1vmin;
+    border-width: 0.2vmin;
+}

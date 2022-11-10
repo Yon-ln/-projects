@@ -5,6 +5,7 @@ let distance = 0;
 const groups = document.getElementsByClassName("main-card");
 const bar = document.getElementsByClassName("bar");
 let _1vh = Math.round(window.innerHeight / (groups.length * 100));
+let sound = new Audio("mixkit-sand-swish-1494.wav");
 
 bar[0].style.height = (bar[0].parentNode.clientHeight) / groups.length + "px";
 
@@ -23,10 +24,13 @@ function setIndex(index, dy){
     if(dy == -1){
         let f = g.pop();
         g.splice(g, 0, f);
+        sound.play();
     }
     else if(dy == 1){
         let l = g.shift();
         g.push(l);
+        sound.play();
+
     }
 
     for(let i = 0; i < g.length; ++i) g[i].dataset.trueIndex = i;
