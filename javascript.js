@@ -62,6 +62,11 @@ document.getElementById("scroller").addEventListener("wheel", function (event) {
 
 }, false);
 
+
+for(let i = 0; i < 8;++i){
+    setIndex(i, -1)
+}
+
 document.getElementsByClassName("bar")[0].addEventListener('click', function (event){
 
 });
