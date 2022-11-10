@@ -26,9 +26,9 @@ body {
 }
 
 .scrollbar {
-    position: absolute;
+    position: fixed;
     margin-left:-3vmin;
-    margin-top:1.75vmin;
+    margin-top:-17.5vmin;
     height: 30vmin;
     aspect-ratio: 0.05;
     border-radius: 2vmin 1vmin 1vmin 2vmin;
@@ -46,14 +46,16 @@ body {
     transform: translateX(25%) translateY(-25%);
 ;}
 
+
 .card-group,
 .card {
-    aspect-ratio: 9/16;
+    aspect-ratio: 16/9;
 }
 
 .card-group,
 .main-card {
     width:60vmin;
+    margin-top:-20vmin;
 }
 
 .main-card,
@@ -71,6 +73,7 @@ body {
 }
 
 .main-card {
+    
     width: 60vmin;
     border-radius: 1vmin;
     transform: translate(15%) translateY(-15%);
