@@ -55,3 +55,9 @@ window.addEventListener("wheel", function (event) {
 document.getElementsByClassName("bar")[0].addEventListener('click', function (event){
 
 });
+
+window.addEventListener('resize', function(event){
+    bar[0].style.height = (0.95*bar[0].parentNode.clientHeight) / groups.length + "px";
+    bar[0].style.marginTop = activeIndex * (bar[0].parentNode.clientHeight / groups.length) + "px";
+
+});
