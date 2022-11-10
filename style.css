@@ -96,6 +96,10 @@ body {
     grid-column:1/4;
 }
 
+.content .header img{
+    height:3.5vmin;
+}
+
 .content .header p{
     margin:1vmin;
 }
@@ -106,15 +110,21 @@ body {
 
 .content .main{
     padding-left:1vmin;
-    grid-column:2/3;
+    padding-right:1vmin;
+    margin:1vmin;
     overflow: hidden;
     border-style: dashed;
     border-radius: 1vmin;
     border-width: 0.15vmin
 }
 
+.content .main p{
+    font-size: 2vmin;
+}
+
 .content .footer{
-    padding:0.25vmin;
+    height:3.5vmin;
+    padding:1vmin;
     grid-column:1/4;
 }
 
