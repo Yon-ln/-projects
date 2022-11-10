@@ -1,15 +1,20 @@
 let activeIndex = 0;
 let previousIndex = activeIndex;
-const maxDist = 40;
 let distance = 0;
 const groups = document.getElementsByClassName("main-card");
+const maxDist = 15 * groups.length;
+
 const bar = document.getElementsByClassName("bar");
 let _1vh = Math.round(window.innerHeight / (groups.length * 100));
 let sound = new Audio("mixkit-sand-swish-1494.wav");
 
 bar[0].style.height = (bar[0].parentNode.clientHeight) / groups.length + "px";
+let n =[]
+for(let i = 0; i < groups.length; ++i){
+    n.push(groups[i]);
+}
 
-let g = [groups[0], groups[1], groups[2]].sort((a, b) => parseFloat(a.dataset.trueIndex) - parseFloat(b.dataset.trueIndex));
+let g = n.sort((a, b) => parseFloat(a.dataset.trueIndex) - parseFloat(b.dataset.trueIndex));
 
 function returnIndex(dist){
     for(let i = groups.length-1; i >= 0; i--)
@@ -24,26 +29,27 @@ function setIndex(index, dy){
     if(dy == -1){
         let f = g.pop();
         g.splice(g, 0, f);
-        sound.play();
     }
     else if(dy == 1){
         let l = g.shift();
         g.push(l);
-        sound.play();
 
     }
 
     for(let i = 0; i < g.length; ++i) g[i].dataset.trueIndex = i;
     
     bar[0].style.marginTop = index * (bar[0].parentNode.clientHeight / groups.length) + "px";
+    
+    currentGroup.dataset.status = "inactive";
+    nextGroup.dataset.status = "active;"
+    
     activeIndex = index;
     previousIndex = activeIndex;
 }
 
 function getToIndex(index, dy){
-    while (activeIndex != index){
-        setIndex(index, dy);
-    }
+    while(activeIndex!=index)
+    setIndex(index, dy);
 }
 
 window.addEventListener("wheel", function (event) {

@@ -15,20 +15,26 @@ body {
 .scrollbar {
     position: absolute;
     margin-left:-3vmin;
-    margin-top:1.5vmin;
+    margin-top:1.75vmin;
     height: 30vmin;
     aspect-ratio: 0.05;
-    border-radius: 1vmin;
+    border-radius: 2vmin 1vmin 1vmin 2vmin;
+
     border-style: solid;
     border-width: 0.2vmin;
+
+    
+    
 }
 
 .bar{
-    background-color: black;
-    border-radius: 1vmin;
+    border: 0.2vmin solid black;
+    border-radius: 2vmin 1vmin 1vmin 2vmin;
     width:100%;
-    
-}
+    transition: margin-top .25s linear;
+    color:white;
+    transform: translateX(25%) translateY(-25%);
+;}
 
 .card-group,
 .card {
@@ -52,12 +58,15 @@ body {
     position: absolute;
     transition: transform 1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 200ms linear;
     overflow:hidden;
-
 }
 
 .main-card {
     width: 60vmin;
     border-radius: 1vmin;
+    transform: translate(15%) translateY(-15%);
+    color: rgba(0,0,0,0);
+    display: none;
+
 
 }
 
@@ -65,17 +74,27 @@ body {
     transform: translate(0%) translate(0%);
     z-index: 2;
     background-color: white;
+    color:rgba(1,1,1,1);
+    display:block;
 
 }
 
 .main-card[data-true-index="1"]{
     transform: translateX(5%) translateY(-5%);
     z-index:1;
+    color:rgba(1,1,1,1);
+    display:block;
+
+
 }
 
 .main-card[data-true-index="2"]{
     transform: translateX(10%) translateY(-10%);
     z-index:0;
+    color:rgba(1,1,1,1);
+    display:block;
+
+
 }
 
 .main-card[data-true-index="1"]:hover{
@@ -85,6 +104,7 @@ body {
 .main-card[data-true-index="2"]:hover{
     transform: translateX(10%) translateY(-25%);
 }
+
 
 .content{
     display: grid;
@@ -107,6 +127,7 @@ body {
 }
 
 .content .header p{
+    font-size:2vmin;
     margin:1vmin;
 }
 
@@ -124,8 +145,8 @@ body {
 
 }
 
-.content .main:hover{
-    background-color: aliceblue;
+.main-card[data-true-index="0"] .content .main:hover{
+    border-style: solid;
 }
 
 .content .main p{
@@ -148,27 +169,33 @@ body {
     border-width: 0.2vmin;
 }
 
-.footer .page{
-    margin:0vmin;
+.content .page{
+    position:absolute;
+    margin:1vmin;
+    right:0;
+    bottom: 0;
     font-size:2.5vmin;
-    float:right;
 }
 
-.content .main .games{
-    display: grid;
-    grid-template: auto 1fr auto / auto 1fr auto;
-}
-
-.content .main .games
+.content .games
 .showcase {
-    padding: 1vmin;
-    grid-column: 1/4;
+    margin-top: 1vmin;
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: 25vmin 25vmin;
+    grid-gap: 1vmin 1.25vmin;
 }
 
-.blocks {
+.showcase .blocks {
     height:25vmin;
     aspect-ratio: 1;
     border-style: dashed;
     border-radius: 1vmin;
-    border-width: 0.2vmin;
+    border-width: 0.15vmin;
+    border-color: black;
+}
+
+.fillele {
+    height:100%;
+    width:100%;
 }
