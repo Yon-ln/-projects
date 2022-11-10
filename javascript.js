@@ -6,7 +6,7 @@ const groups = document.getElementsByClassName("main-card");
 const bar = document.getElementsByClassName("bar");
 let _1vh = Math.round(window.innerHeight / (groups.length * 100));
 
-bar[0].style.height = (0.95*bar[0].parentNode.clientHeight) / groups.length + "px";
+bar[0].style.height = (bar[0].parentNode.clientHeight) / groups.length + "px";
 
 let g = [groups[0], groups[1], groups[2]].sort((a, b) => parseFloat(a.dataset.trueIndex) - parseFloat(b.dataset.trueIndex));
 
@@ -57,7 +57,7 @@ document.getElementsByClassName("bar")[0].addEventListener('click', function (ev
 });
 
 window.addEventListener('resize', function(event){
-    bar[0].style.height = (0.95*bar[0].parentNode.clientHeight) / groups.length + "px";
+    bar[0].style.height = (bar[0].parentNode.clientHeight) / groups.length + "px";
     bar[0].style.marginTop = activeIndex * (bar[0].parentNode.clientHeight / groups.length) + "px";
 
 });
