@@ -41,7 +41,7 @@ function setIndex(index, dy){
     bar[0].style.marginTop = index * (bar[0].parentNode.clientHeight / groups.length) + "px";
     
     currentGroup.dataset.status = "inactive";
-    nextGroup.dataset.status = "active;"
+    nextGroup.dataset.status = "active;";
     
     activeIndex = index;
     previousIndex = activeIndex;
@@ -52,7 +52,7 @@ function getToIndex(index, dy){
     setIndex(index, dy);
 }
 
-window.addEventListener("wheel", function (event) {
+document.getElementById("scroller").addEventListener("wheel", function (event) {
     distance = distance + Math.sign(event.deltaY) <= maxDist - 1 ? distance + Math.sign(event.deltaY) : 0;
     if(distance < 0) distance = maxDist;
 
