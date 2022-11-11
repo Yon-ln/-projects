@@ -107,7 +107,6 @@ body {
     transform: translateX(4vmin) translateY(-1vmin);
     z-index:0;
     background-color: white;
-
     color:rgba(1,1,1,1);
     display:block;
 
@@ -116,7 +115,7 @@ body {
 
 .main-card[data-true-index="7"]{
     transform: translateX(2vmin) translateY(3vmin);
-    z-index:0;
+    z-index:1;
     color:rgba(1,1,1,1);
     display:block;
     border-right: 0;
