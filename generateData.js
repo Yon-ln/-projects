@@ -65,7 +65,7 @@ function key(key){
     return n;
 }
 
-for(n in (data.cards)) {
+for(n in data.cards) {
 
     let base = template.cloneNode(true);
 
