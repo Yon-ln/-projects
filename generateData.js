@@ -214,7 +214,6 @@ function addDiv(parent, cls, children=[]){
     });
     parent.appendChild(div);
 }
-
 function key(key){
     let n = {
         "word" : "",
