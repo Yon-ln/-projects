@@ -165,9 +165,15 @@ function key(key){
     return n;
 }
 
+
 for(n in data.cards) {
+    let f = [100 + Math.floor(Math.random() * 15) * 10, 100 + Math.floor(Math.random() * 15) * 10,100 + Math.floor(Math.random() * 15) * 10, 0.25];
 
     let base = template.cloneNode(true);
+
+    base.style.backgroundColor = f;
+
+    console.log(base);
 
     for (const [item, value] of Object.entries(data.cards[n])){
         if(item.toLowerCase().indexOf("{data}") === -1){
