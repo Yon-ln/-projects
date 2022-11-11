@@ -65,7 +65,7 @@ function key(key){
     return n;
 }
 
-for(n in Object.entries(data.cards)) {
+for(n in (data.cards)) {
 
     let base = template.cloneNode(true);
 
@@ -95,6 +95,9 @@ document.getElementById("scroller").addEventListener("wheel", function (event) {
         dy = Math.sign(event.deltaY);
     }
 });
+
+function setIndex(){
+}
 
 var check = setInterval(loop);
 var handle = null;
