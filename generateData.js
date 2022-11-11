@@ -25,7 +25,7 @@ let data = { "cards" : [
           "{img}twitch.svg",
           "{img}twitter.svg",
           "{img}linkedin.svg",
-          "{index}0"
+          "{index}1"
           ],
   
         "{data}trueIndex" : ""
@@ -33,146 +33,82 @@ let data = { "cards" : [
     {
       "header" : [
         "{img}python.png",
-        "{p}Specialising in AI"
+        "{p}Python"
         ],
   
       "main" : [
-        "{p}Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  
         ],
       
       "footer" : [
-        "{img}instagram.svg",
-        "{img}twitch.svg",
-        "{img}twitter.svg",
-        "{img}linkedin.svg",
-        "{index}1"
+        "{index}2"
         ],
   
         "{data}trueIndex" : ""
     },
     {
       "header" : [
-        "{img}home.svg",
-        "{p}Doanh Luu Nguyen"
+        "{img}unity.png",
+        "{p}Unity"
         ],
   
       "main" : [
-        "{p}Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  
         ],
       
       "footer" : [
-        "{img}instagram.svg",
-        "{img}twitch.svg",
-        "{img}twitter.svg",
-        "{img}linkedin.svg"
+        "{index}3"
         ],
         
         "{data}trueIndex" : ""
     },
     {
       "header" : [
-        "{img}home.svg",
-        "{p}Doanh Luu Nguyen"
+        "{img}c-.png",
+        "{p} Shaders & Physics"
         ],
   
       "main" : [
-        "{p}Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  
         ],
       
       "footer" : [
-        "{img}instagram.svg",
-        "{img}twitch.svg",
-        "{img}twitter.svg",
-        "{img}linkedin.svg"
+        "{index}4"
         ],
         
         "{data}trueIndex" : ""
     },
     {
       "header" : [
-        "{img}home.svg",
-        "{p}Doanh Luu Nguyen"
+        "{img}pixel.png",
+        "{p}Pixel Art"
         ],
   
       "main" : [
-        "{p}Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   
         ],
       
       "footer" : [
-        "{img}instagram.svg",
-        "{img}twitch.svg",
-        "{img}twitter.svg",
-        "{img}linkedin.svg"
+        "{index}5"
         ],
         
         "{data}trueIndex" : ""
     },
     {
       "header" : [
-        "{img}home.svg",
-        "{p}Doanh Luu Nguyen"
+        "{img}mail.svg",
+        "{p}Email me!"
         ],
   
       "main" : [
-        "{p}Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  
         ],
       
       "footer" : [
-        "{img}instagram.svg",
-        "{img}twitch.svg",
-        "{img}twitter.svg",
-        "{img}linkedin.svg"
-        ],
-        
-        "{data}trueIndex" : ""
-    },
-    {
-      "header" : [
-        "{img}home.svg",
-        "{p}Doanh Luu Nguyen"
-        ],
-  
-      "main" : [
-        "{p}Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  
-        ],
-      
-      "footer" : [
-        "{img}instagram.svg",
-        "{img}twitch.svg",
-        "{img}twitter.svg",
-        "{img}linkedin.svg"
-        ],
-        
-        "{data}trueIndex" : ""
-    },
-    {
-      "header" : [
-        "{img}home.svg",
-        "{p}Doanh Luu Nguyen"
-        ],
-  
-      "main" : [
-        "{p}Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  
-        ],
-      
-      "footer" : [
-        "{img}instagram.svg",
-        "{img}twitch.svg",
-        "{img}twitter.svg",
-        "{img}linkedin.svg"
+        "{index}6"
         ],
         
         "{data}trueIndex" : ""
     }
   
   ]};
+
 // let data = null;
 
 // $.ajax({
@@ -188,9 +124,9 @@ let data = { "cards" : [
 const keywords = {
     "{class}" : 0,
     "{data}": function(element, data ) { element.dataset[data] = index.max; element.dataset.index = index.max; },
-    "{img}": function(element, img) { element.src = img; },
+    "{img}": function(element, img) { element.src = "icons/" + img; },
     "{p}" : function(element, p) { element.innerText = p; },
-    "{index}" : function(element, data) { element.innerText = data; }
+    "{index}" : function(element, data) { element.classList.add("page"); element.innerText = data; }
 };
 
 function addDiv(parent, cls, children=[]){
@@ -198,7 +134,7 @@ function addDiv(parent, cls, children=[]){
 
     let div = document.createElement("div");
     div.classList += cls;
-    div.style.backgroundColor = "rgba(" + n.join(',') + ")";
+    //div.style.backgroundColor = "rgba(" + n.join(',') + ")";
 
 
     children.forEach((child, index) => {
