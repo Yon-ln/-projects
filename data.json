@@ -14,7 +14,8 @@
         "{img}instagram.svg",
         "{img}twitch.svg",
         "{img}twitter.svg",
-        "{img}linkedin.svg"
+        "{img}linkedin.svg",
+        "{index}0"
         ],
 
       "{data}trueIndex" : ""
@@ -34,7 +35,8 @@
       "{img}instagram.svg",
       "{img}twitch.svg",
       "{img}twitter.svg",
-      "{img}linkedin.svg"
+      "{img}linkedin.svg",
+      "{index}1"
       ],
 
       "{data}trueIndex" : ""

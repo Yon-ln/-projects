@@ -25,7 +25,8 @@ const keywords = {
     "{class}" : 0,
     "{data}": function(element, data ) { element.dataset[data] = index.max; element.dataset.index = index.max; },
     "{img}": function(element, img) { element.src = img; },
-    "{p}" : function(element, p) { element.innerText = p; }
+    "{p}" : function(element, p) { element.innerText = p; },
+    "{index}" : function(element, data) { element.innerText = data; }
 };
 
 function addDiv(parent, cls, children=[]){
