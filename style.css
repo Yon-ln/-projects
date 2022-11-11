@@ -6,8 +6,6 @@
 
 }
 
-
-
 body {
     cursor:url("circle.svg"),default;
     touch-action: none;
@@ -68,7 +66,7 @@ body {
     border-style:solid;
     border-width:0.2vmin;
     position: absolute;
-    transition: transform 1000ms cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 200ms linear,
+    transition: transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 200ms linear,
     height 200ms linear;
 }
 
@@ -138,44 +136,58 @@ body {
 }
 
 
+
+
+/*  
+
+ ::::::::        ::::::::       ::::    :::      :::::::::::      ::::::::::      ::::    :::      ::::::::::: 
+:+:    :+:      :+:    :+:      :+:+:   :+:          :+:          :+:             :+:+:   :+:          :+:     
++:+             +:+    +:+      :+:+:+  +:+          +:+          +:+             :+:+:+  +:+          +:+     
++#+             +#+    +:+      +#+ +:+ +#+          +#+          +#++:++#        +#+ +:+ +#+          +#+     
++#+             +#+    +#+      +#+  +#+#+#          +#+          +#+             +#+  +#+#+#          +#+     
+#+#    #+#      #+#    #+#      #+#   #+#+#          #+#          #+#             #+#   #+#+#          #+#     
+ ########        ########       ###    ####          ###          ##########      ###    ####          ###     
+
+*/
+
 .content{
     display: grid;
-    grid-template: auto 1fr auto / auto 1fr auto;
-    margin: 0vmin 1vmin 0vmin 1vmin;
-
+    grid-template-rows: 0.2fr 1fr 0.2fr;
 }
 
-/**/
+.content > div {
+    border-radius: 1vmin;
+    min-height:5vmin;
+    display: flex;
+    align-items: center;
+}
+
+.content img{
+    height: 3.5vmin;
+}
+
+.content p{
+    font-size: 2vmin;
+    margin-left: 1vmin;
+}
 
 .content .header{
-    display:flex;
     padding-left:1vmin;
-    grid-column:1/4;
-}
-
-
-.content .header img{
-    height:3.5vmin;
-}
-
-.content .header p{
-    font-size:2vmin;
-    margin:1vmin;
-}
-
-.content .left-side{
-    grid-column:1/2;
 }
 
 .content .main{
-    position: relative;
-    padding-left:1vmin;
-    padding-right:1vmin;
-    border-style: dashed;
-    border-radius: 1vmin;
-    border-width: 0.15vmin;
+    align-items:baseline;
+    border: 0.15vmin dashed black;
+    margin: 1vmin;
+    padding: 0vmin 0.5vmin 0vmin 0.5vmin;
     overflow: hidden;
 }
+
+.content .footer{
+    padding-left: 1vmin;
+}
+
+/*  */
 
 .content .main .of-wrapper{
     width:100%;
@@ -203,11 +215,7 @@ body {
 
 }
 
-.content .footer{
-    display: inline-block;
-    padding: 0.75vmin 1vmin 0vmin 1vmin;
-    grid-column:1/4;
-}
+
 
 .footer .icon{
     height:3vmin;

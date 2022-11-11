@@ -1,12 +1,13 @@
 let activeIndex = 0;
 let previousIndex = activeIndex;
 let distance = 0;
+let dy = 0;
+let scrolling = false;
 const groups = document.getElementsByClassName("main-card");
-const maxDist = 15 * groups.length;
+const maxDist = groups.length;
 
 const bar = document.getElementsByClassName("bar");
 let _1vh = Math.round(window.innerHeight / (groups.length * 100));
-let sound = new Audio("mixkit-sand-swish-1494.wav");
 
 bar[0].style.height = (bar[0].parentNode.clientHeight) / groups.length + "px";
 let n =[]
@@ -40,7 +41,7 @@ function setIndex(index, dy){
     
     bar[0].style.marginTop = index * (bar[0].parentNode.clientHeight / groups.length) + "px";
     
-    currentGroup.dataset.status = "inactive";
+    currentGroup.dataset.status = "unknown";
     nextGroup.dataset.status = "active;";
     
     activeIndex = index;
@@ -53,14 +54,24 @@ function getToIndex(index, dy){
 }
 
 document.getElementById("scroller").addEventListener("wheel", function (event) {
-    distance = distance + Math.sign(event.deltaY) <= maxDist - 1 ? distance + Math.sign(event.deltaY) : 0;
-    if(distance < 0) distance = maxDist;
+    if(scrolling)
+        setTimeout(function(){
+            scrolling = false;
+        }, 1000)
 
-    let dy = event.deltaY < 0 ? -1 : 1;
+    if (!scrolling){
+        console.log(activeIndex);
+        distance = distance + Math.sign(event.deltaY) <= maxDist - 1 ? distance + Math.sign(event.deltaY) : 0;
+        if(distance < 0) distance = maxDist;
 
-    getToIndex(returnIndex(distance), dy);
+        dy = event.deltaY < 0 ? -1 : 1;
+        let n = activeIndex + dy < maxDist ? activeIndex + dy : 0;
+        if(n < 0) n = maxDist
+        getToIndex(returnIndex(n), dy);
+        scrolling = true;
+    }
 
-}, false);
+});
 
 document.getElementsByClassName("bar")[0].addEventListener('click', function (event){
 
