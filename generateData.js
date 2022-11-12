@@ -280,16 +280,18 @@ async function scrollcancel() {
 let hasClickedBar = false;
 let initialBarPosition = [0,0];
 
-scrollbar.addEventListener("mousedown",
-function clicked(e) {
+["mousedown","touchdown"].forEach( evt =>
+  scrollbar.addEventListener(evt, function moving(event){
     hasClickedBar = true;
-});
+}), false);
 
 let bounds = scrollbar.parentElement.getBoundingClientRect();
 let barBounds = scrollbar.getBoundingClientRect();
 let h = bounds.bottom - bounds.top;
 
-document.addEventListener("mousemove", function moving(event){
+
+["mousemove","touchmove"].forEach( evt =>
+document.addEventListener(evt, function moving(event){
 
   if(hasClickedBar){
     let barIndex = (event.clientY / (h/ index.max) >> 0) - 1;
@@ -299,12 +301,13 @@ document.addEventListener("mousemove", function moving(event){
     else if(index.active < 0) index.active = 0;
   }
 
-});
+}), false);
 
-document.addEventListener("mouseup", function up(event){
+["mouseup","touchup"].forEach( evt =>
+  document.addEventListener(evt, function moving(event){
   hasClickedBar = false;
   isScrolling = false;
-});
+}),false);
 
 
 
