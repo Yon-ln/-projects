@@ -43,7 +43,7 @@ body {
     border: 0.2vmin solid black;
     border-radius: 2vmin 1vmin 1vmin 2vmin;
     width:100%;
-    transition: margin-top .25s linear, background-color .25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: margin-top .1s cubic-bezier(0.47, 0, 0.745, 0.715), background-color .25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transform: translateX(25%) translateY(-25%);
 ;}
 

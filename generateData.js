@@ -292,6 +292,8 @@ let h = bounds.bottom - bounds.top;
 
 ["mousemove","touchmove"].forEach( evt =>
 document.addEventListener(evt, function moving(event){
+  let position = event;
+  if(evt == "touchmove") position = event.touches[0]
 
   if(hasClickedBar){
     let barIndex = (event.clientY / (h/ index.max) >> 0) - 1;
