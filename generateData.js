@@ -265,8 +265,8 @@ function sleep(ms) {
 }
 
 async function scrollcancel() {
-    if(dy < 0) index.active += 1;
-    else index.active -= 1;
+    if(dy < 0) index.active -= 1;
+    else index.active += 1;
 
     if(index.active > index.max - 1) index.active = index.max - 1;
     else if(index.active < 0) index.active = 0;
@@ -278,11 +278,11 @@ async function scrollcancel() {
 }
 
 let hasClickedBar = false;
-let initialBarPosition = [0,0];
 
 ["mousedown","touchdown"].forEach( evt =>
   scrollbar.addEventListener(evt, function moving(event){
     hasClickedBar = true;
+    bases[0].firstChild.style.backgroundColor = "red";
 }), false);
 
 let bounds = scrollbar.parentElement.getBoundingClientRect();
