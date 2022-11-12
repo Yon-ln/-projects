@@ -280,7 +280,7 @@ async function scrollcancel() {
 let hasClickedBar = false;
 
 ["mousedown","touchdown"].forEach( evt =>
-  scrollbar.addEventListener(evt, function moving(event){
+  document.addEventListener(evt, function moving(event){
     hasClickedBar = true;
     bases[0].firstChild.style.backgroundColor = "red";
 }), false);
