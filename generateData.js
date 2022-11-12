@@ -161,7 +161,7 @@ function addDiv(parent, cls, children=[]){
 
     let div = document.createElement("div");
     div.classList += cls;
-    div.style.backgroundColor = "rgba(" + n.join(',') + ")";
+    //div.style.backgroundColor = "rgba(" + n.join(',') + ")";
 
 
     children.forEach((child, index) => {
@@ -282,7 +282,6 @@ let hasClickedBar = false;
 ["mousedown","touchstart"].forEach( evt =>
   scrollbar.addEventListener(evt, function moving(event){
     hasClickedBar = true;
-    bases[0].firstChild.style.backgroundColor = "red";
 }));
 
 let bounds = scrollbar.parentElement.getBoundingClientRect();
