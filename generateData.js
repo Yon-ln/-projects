@@ -3,11 +3,13 @@ const template = document.getElementById("template");
 const scrollbar = document.getElementById("scrollbar");
 let bases = [];
 
-let index = {
+var index = {
     "active" : 0,
     "previous" : 0,
     "max" : 0,
 };
+
+
 let data = { "cards" : [
     {
         "header" : [
@@ -52,6 +54,7 @@ let data = { "cards" : [
         ],
   
       "main" : [
+        "{class}of-wrapper",
         ],
       
       "footer" : [
@@ -109,6 +112,16 @@ let data = { "cards" : [
   
   ]};
 
+let video = [
+  "https://i.gyazo.com/79f60cdba62f8dbab7b9171606a9db46.mp4",
+  "https://i.gyazo.com/61f7a467af0619eff9d189949dd62a10.mp4",
+  "https://i.gyazo.com/131ad2d134bf12d75a9c82544a81d93e.mp4",
+  "https://i.gyazo.com/79f60cdba62f8dbab7b9171606a9db46.mp4",
+  "https://i.gyazo.com/79f60cdba62f8dbab7b9171606a9db46.mp4",
+  "https://i.gyazo.com/79f60cdba62f8dbab7b9171606a9db46.mp4",
+  "https://i.gyazo.com/79f60cdba62f8dbab7b9171606a9db46.mp4",
+];
+
 // let data = null;
 
 // $.ajax({
@@ -122,7 +135,21 @@ let data = { "cards" : [
 // });
 
 const keywords = {
-    "{class}" : 0,
+    "{class}" : function(element, data) {
+      if(data == "of-wrapper"){
+        video.forEach((x, i) => {
+          let h = document.createElement("video");
+          let s = document.createElement("source");
+
+          h.controls = "none";
+          s.src = x;
+          s.type = "video/mp4";
+
+          h.appendChild(s)
+          element.appendChild(h);
+        });
+      }
+     },
     "{data}": function(element, data ) { element.dataset[data] = index.max; element.dataset.index = index.max; },
     "{img}": function(element, img) { element.src = "icons/" + img; },
     "{p}" : function(element, p) { element.innerText = p; },
@@ -134,14 +161,19 @@ function addDiv(parent, cls, children=[]){
 
     let div = document.createElement("div");
     div.classList += cls;
-    //div.style.backgroundColor = "rgba(" + n.join(',') + ")";
+    div.style.backgroundColor = "rgba(" + n.join(',') + ")";
 
 
     children.forEach((child, index) => {
         if(child.toLowerCase().indexOf(key(child).keyword) !== -1){
-            let element = key(child).keyword.replace('{','').replace('}','');
+            let element = key(child).keyword.replace('{','').replace('}',''); // {data} = data
             if(element){
-                let elementObj = document.createElement(key(child).keyword.replace('{','').replace('}',''));
+                let elementObj = null;
+                if(element == "class") {
+                  elementObj = document.createElement("div");
+                  elementObj.classList.add(key(child).word)
+                }
+                else elementObj = document.createElement(key(child).keyword.replace('{','').replace('}',''));
                 keywords[key(child).keyword](elementObj, key(child).word);
                 div.appendChild(elementObj);
             }
@@ -150,6 +182,7 @@ function addDiv(parent, cls, children=[]){
     });
     parent.appendChild(div);
 }
+
 function key(key){
     let n = {
         "word" : "",
@@ -167,13 +200,8 @@ function key(key){
 
 
 for(n in data.cards) {
-    let f = [100 + Math.floor(Math.random() * 15) * 10, 100 + Math.floor(Math.random() * 15) * 10,100 + Math.floor(Math.random() * 15) * 10, 0.25];
 
     let base = template.cloneNode(true);
-
-    base.style.backgroundColor = f;
-
-    console.log(base);
 
     for (const [item, value] of Object.entries(data.cards[n])){
         if(item.toLowerCase().indexOf("{data}") === -1){
@@ -205,18 +233,18 @@ document.getElementById("scroller").addEventListener("wheel", function (event) {
 function setIndex(){
 }
 
-var check = setInterval(loop);
+var check = setInterval(loop, 100);
 var handle = null;
 
 function loop(){
-    if(time > previousTime + 300 && isScrolling)
+    if(time > previousTime + 275 && isScrolling)
         scrollcancel();
 
     scrollbar.style.height = (scrollbar.parentNode.clientHeight) / index.max + "px";
     scrollbar.style.marginTop = index.active * (scrollbar.parentNode.clientHeight / index.max) + "px";
-    bases.forEach((x, i) => x.dataset.trueIndex = i );
 
-    index.active = bases[0].dataset.index;
+    bases.forEach((x, i) => x.dataset.trueIndex = i );
+    rotate(bases, index.active);
 }
 
 function clock(){
@@ -226,11 +254,10 @@ function clock(){
 
 setInterval(clock);
 
-function arrayRotate(arr, reverse) {
-
-    if (reverse) arr.unshift(arr.pop());
-    else arr.push(arr.shift());
-    return arr;
+function rotate(arr, ind) {
+    if(bases[0].dataset.index != index.active)
+      if (bases[0].dataset.index > index.active) arr.unshift(arr.pop());
+      else arr.push(arr.shift());
 }
 
 function sleep(ms) {
@@ -238,14 +265,46 @@ function sleep(ms) {
 }
 
 async function scrollcancel() {
+    if(dy < 0) index.active += 1;
+    else index.active -= 1;
+
+    if(index.active > index.max - 1) index.active = index.max - 1;
+    else if(index.active < 0) index.active = 0;
+
     previousTime = time;
     await sleep(250);
-    arrayRotate(bases, dy < 0 ? true: false);
     isScrolling = false;
 
 }
 
+let hasClickedBar = false;
+let initialBarPosition = [0,0];
 
+scrollbar.addEventListener("mousedown",
+function clicked(e) {
+    hasClickedBar = true;
+});
+
+let bounds = scrollbar.parentElement.getBoundingClientRect();
+let barBounds = scrollbar.getBoundingClientRect();
+let h = bounds.bottom - bounds.top;
+
+document.addEventListener("mousemove", function moving(event){
+
+  if(hasClickedBar){
+    let barIndex = (event.clientY / (h/ index.max) >> 0) - 1;
+    index.active = barIndex;
+
+    if(index.active > index.max - 1) index.active = index.max - 1;
+    else if(index.active < 0) index.active = 0;
+  }
+
+});
+
+document.addEventListener("mouseup", function up(event){
+  hasClickedBar = false;
+  isScrolling = false;
+});
 
 
 

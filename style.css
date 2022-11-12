@@ -32,6 +32,11 @@ body {
     border-radius: 2vmin 1vmin 1vmin 2vmin;
     border-style: solid;
     border-width: 0.2vmin;
+
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
 }
 
 .bar{
@@ -43,7 +48,7 @@ body {
 ;}
 
 .bar:hover{
-    background-color: black;
+    background-color: rgba(0,0,0,0.2);
 }
 
 .card-group,
@@ -89,7 +94,7 @@ body {
 
 .main-card[data-true-index="1"] div:not(:first-child):not(:last-child),
 .main-card[data-true-index="2"] div:not(:first-child):not(:last-child),
-.main-card[data-true-index="5"] div:not(:first-child):not(:last-child){
+.main-card[data-true-index="5"] div:not(:last-child){
     visibility: hidden;
 }
 
@@ -135,6 +140,7 @@ body {
 .content{
     display: grid;
     grid-template-rows: 0.2fr 1fr 0.2fr;
+
 }
 
 .content > div {
@@ -162,7 +168,7 @@ body {
     border: 0.15vmin dashed black;
     margin: 1vmin;
     padding: 0vmin 0.5vmin 0vmin 0.5vmin;
-    transition: border .2s linear;
+    transition: border .5s linear;
     overflow: hidden;
 }
 
@@ -173,30 +179,30 @@ body {
 /*  */
 
 .content .main .of-wrapper{
-    width:100%;
+    height:100%;
+    max-width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap:1vmin;
+    justify-content: center;
+    overflow-y: scroll;
 }
 
-.main-card[data-true-index="0"] .content .main:hover{
+/* .main-card[data-true-index="0"] .content .main:hover{
     border-style: solid;
     border-width: 0.2vmin;
-}
+} */
 
 .content .main p{
     font-size: 2vmin;
 }
 
-.content .main .of-wrapper[data-status="expand"] img:hover{
-    position:fixed;
-    width:92.5%;
-    border-style: dashed;
+.content .main .of-wrapper > video{
+    height:100%;
+    aspect-ratio: 1;
     border-radius: 1vmin;
-    border-width: 0.15vmin;
-}
-
-.content .main .of-wrapper img{
-    margin-top: 1vmin;
-    width:100%;
-
+    transition: transform .1s cubic-bezier(0.19, 1, 0.22, 1);
+    background-color: black;
 }
 
 .footer img:hover{
