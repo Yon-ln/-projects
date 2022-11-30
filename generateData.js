@@ -11,104 +11,21 @@ var index = {
 
 
 let data = { "cards" : [
-    {
-        "header" : [
-          "{img}home.svg",
-          "{p}Doanh Luu Nguyen"
-          ],
-  
-        "main" : [
-          "{p}Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  
-          ],
-        
-        "footer" : [
-          "{img}instagram.svg",
-          "{img}twitch.svg",
-          "{img}twitter.svg",
-          "{img}linkedin.svg",
-          "{index}1"
-          ],
-  
-        "{data}trueIndex" : ""
-    },
-    {
-      "header" : [
-        "{img}python.png",
-        "{p}Python"
-        ],
-  
-      "main" : [
-        ],
+    { "header" : ["{img}home.svg", "{p}Doanh Luu Nguyen"],
+      "main" : ["{img}Screenshot 2022-11-10 at 20.35.54.png"],
+      "footer" : ["{img}instagram.svg", "{img}twitch.svg", "{img}twitter.svg", "{img}linkedin.svg", "{index}1"],
+      "{data}trueIndex" : "" },
       
-      "footer" : [
-        "{index}2"
-        ],
-  
-        "{data}trueIndex" : ""
-    },
-    {
-      "header" : [
-        "{img}unity.png",
-        "{p}Unity"
-        ],
-  
-      "main" : [
-        "{class}of-wrapper",
-        ],
-      
-      "footer" : [
-        "{index}3"
-        ],
-        
-        "{data}trueIndex" : ""
-    },
-    {
-      "header" : [
-        "{img}c-.png",
-        "{p} Shaders & Physics"
-        ],
-  
-      "main" : [
-        ],
-      
-      "footer" : [
-        "{index}4"
-        ],
-        
-        "{data}trueIndex" : ""
-    },
-    {
-      "header" : [
-        "{img}pixel.png",
-        "{p}Pixel Art"
-        ],
-  
-      "main" : [
-  
-        ],
-      
-      "footer" : [
-        "{index}5"
-        ],
-        
-        "{data}trueIndex" : ""
-    },
-    {
-      "header" : [
-        "{img}mail.svg",
-        "{p}Email me!"
-        ],
-  
-      "main" : [
-        ],
-      
-      "footer" : [
-        "{index}6"
-        ],
-        
-        "{data}trueIndex" : ""
-    }
+    { "header" : ["{img}Python.png", "{p}Python"],
+      "main" : ["{p}Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."],
+      "footer" : ["{index}2"],
+      "{data}trueIndex" : "" },
+
+    { "header" : [ "{img}unity.png", "{p}Unity"], "main" : ["{class}of-wrapper"], "footer" : ["{index}3"], "{data}trueIndex" : "" },
+    { "header" : ["{img}c-.png", "{p} Shaders & Physics"], "main" : [], "footer" : ["{index}4"], "{data}trueIndex" : "" },
+    { "header" : ["{img}pixel.png", "{p}Pixel Art"], "main" : [], "footer" : ["{index}5"], "{data}trueIndex" : "" },
+    { "header" : [ "{img}mail.svg", "{p}Email me!"], "main" : [], "footer" : ["{index}6"], "{data}trueIndex" : "" },
+
   
   ]};
 
@@ -116,6 +33,7 @@ let video = [
   "https://i.gyazo.com/79f60cdba62f8dbab7b9171606a9db46.mp4",
   "https://i.gyazo.com/61f7a467af0619eff9d189949dd62a10.mp4",
   "https://i.gyazo.com/131ad2d134bf12d75a9c82544a81d93e.mp4",
+  "https://i.gyazo.com/79f60cdba62f8dbab7b9171606a9db46.mp4",
   "https://i.gyazo.com/79f60cdba62f8dbab7b9171606a9db46.mp4",
   "https://i.gyazo.com/79f60cdba62f8dbab7b9171606a9db46.mp4",
   "https://i.gyazo.com/79f60cdba62f8dbab7b9171606a9db46.mp4",
